@@ -1,4 +1,5 @@
-import React, { useLayoutEffect } from 'react';
+// import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import AuthProvider from '../../providers/Auth';
@@ -7,31 +8,33 @@ import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
-import Fortune from '../Fortune';
+// import Fortune from '../Fortune';
 import Layout from '../Layout';
-import { random } from '../../utils/fns';
+// import { random } from '../../utils/fns';
+import GlobalStyles from '../../__globalStyles';
 
 function App() {
-  useLayoutEffect(() => {
-    const { body } = document;
+  // useLayoutEffect(() => {
+  //   const { body } = document;
 
-    function rotateBackground() {
-      const xPercent = random(100);
-      const yPercent = random(100);
-      body.style.setProperty('--bg-position', `${xPercent}% ${yPercent}%`);
-    }
+  //   function rotateBackground() {
+  //     const xPercent = random(100);
+  //     const yPercent = random(100);
+  //     body.style.setProperty('--bg-position', `${xPercent}% ${yPercent}%`);
+  //   }
 
-    const intervalId = setInterval(rotateBackground, 3000);
-    body.addEventListener('click', rotateBackground);
+  //   const intervalId = setInterval(rotateBackground, 3000);
+  //   body.addEventListener('click', rotateBackground);
 
-    return () => {
-      clearInterval(intervalId);
-      body.removeEventListener('click', rotateBackground);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(intervalId);
+  //     body.removeEventListener('click', rotateBackground);
+  //   };
+  // }, []);
 
   return (
     <BrowserRouter>
+      <GlobalStyles />
       <AuthProvider>
         <Layout>
           <Switch>
@@ -48,7 +51,7 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-          <Fortune />
+          {/* <Fortune /> */}
         </Layout>
       </AuthProvider>
     </BrowserRouter>
