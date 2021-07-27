@@ -24,6 +24,7 @@ export const VideoItem = (props) => {
         style={{ objectFit: 'cover' }}
         src={props.snippet.thumbnails.high.url}
         alt="img"
+        aria-label={props.snippet.title}
       />
       <div style={{ padding: '10px' }}>
         <VideoTitle>{props.snippet.title}</VideoTitle>

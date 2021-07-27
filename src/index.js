@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+// import App from './components/App';
 import './global.css';
+import Router from './components/App/Router.component';
 
 ReactDOM.render(
+  // eslint-disable-next-line react/jsx-filename-extension
   <React.StrictMode>
-    <App />
+    <Router />
   </React.StrictMode>,
   document.getElementById('root')
 );
