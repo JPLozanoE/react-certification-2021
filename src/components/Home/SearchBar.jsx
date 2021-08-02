@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Bar = styled.div`
   width: 30vw;
-  padding: 0px 16px;
   background-color: #333;
   overflow: hidden;
   display: flex;
@@ -25,7 +24,7 @@ const SearchInput = styled.input`
   width: 100%;
   background-color: black;
   border: 1px solid gray;
-  color: gray;
+  color: white;
   font-size: 16px;
   padding: 4px;
 `;
@@ -41,14 +40,24 @@ const SearchButton = styled.button`
   font-size: 16px;
 `;
 
-export const SearchBar = () => {
+export const SearchBar = ({ setSearch, setSelectedVideo }) => {
+  const [input, setInput] = useState('');
+  const handleChange = (e) => {
+    e.preventDefault();
+    setInput(e.target.value);
+  };
+
+  const handleClick = () => {
+    setSelectedVideo(null);
+    setSearch(input);
+  };
+
   return (
     <Bar className="topnav" id="myTopnav">
-      <SearchInput placeholder="Buscar" />
-      <SearchButton name="buscar">buscar</SearchButton>
-      {/* <button type="button" href="#" className="icon" onClick="myFunction()">
-        <i className="fa fa-bars" />
-      </button> */}
+      <SearchInput value={input} onChange={handleChange} placeholder="Buscar" />
+      <SearchButton onClick={handleClick} name="buscar">
+        buscar
+      </SearchButton>
     </Bar>
   );
 };

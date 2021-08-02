@@ -28,7 +28,7 @@ body{
     font-weight: 400;
     line-height: 1.6;
     font-size: 1.6rem;
-    background: #000000;
+    background: #181818;
     color: #333;
 
 }

@@ -4,7 +4,7 @@ import { SearchBar } from './SearchBar';
 
 const Bar = styled.div`
   padding: 0px 16px;
-  background-color: #333;
+  background-color: #202020;
   overflow: hidden;
   display: flex;
   -ms-flex-direction: row;
@@ -32,17 +32,14 @@ const Links = styled.a`
   font-size: 17px;
 `;
 
-export const Navbar = () => {
+export const Navbar = ({ setSearch, setSelectedVideo }) => {
   return (
     <Bar className="topnav" id="myTopnav">
       <Links href="#home" className="active">
         Toggle
       </Links>
-      <SearchBar />
+      <SearchBar setSelectedVideo={setSelectedVideo} setSearch={setSearch} />
       <Links href="#about">Perfil</Links>
-      {/* <button type="button" href="#" className="icon" onClick="myFunction()">
-        <i className="fa fa-bars" />
-      </button> */}
     </Bar>
   );
 };

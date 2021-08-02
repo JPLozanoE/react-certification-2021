@@ -6,8 +6,6 @@ import { videoData } from '../../__mock__/videoData';
 
 const { items } = videoData;
 
-console.log(items[1]);
-
 beforeEach(() => {
   render(<VideoItem snippet={items[1].snippet} />);
 });

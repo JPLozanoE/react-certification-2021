@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { videoData } from '../../__mock__/videoData';
 import { VideoItem } from './VideoItem';
 
 const VideoContainer = styled.div`
@@ -20,12 +19,11 @@ const VideoContainer = styled.div`
   }
 `;
 
-export const VideoGrid = () => {
-  const { items } = videoData;
+export const VideoGrid = ({ items, setSelectedVideo }) => {
   return (
     <VideoContainer>
       {items.map((video) => (
-        <VideoItem {...video} key={video.etag} />
+        <VideoItem setSelectedVideo={setSelectedVideo} {...video} key={video.etag} />
       ))}
     </VideoContainer>
   );
