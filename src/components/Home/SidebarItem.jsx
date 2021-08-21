@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { AppContext } from '../../state/AppContext';
+import { types } from '../../types/types';
 
 const VideoBox = styled.div`
   cursor: pointer;
@@ -9,12 +11,17 @@ const VideoBox = styled.div`
 
 const DescriptionBox = styled.div`
   padding: 8px;
-  color: white;
+  color: ${(props) => props.theme.titles.color};
 `;
 
-export const SidebarItem = ({ setSelectedVideo, video }) => {
+export const SidebarItem = ({ video }) => {
+  const { dispatch } = useContext(AppContext);
+
   const handleClick = () => {
-    setSelectedVideo(video);
+    dispatch({
+      type: types.setSelectedVideo,
+      payload: video,
+    });
   };
   const {
     snippet: { title, thumbnails },

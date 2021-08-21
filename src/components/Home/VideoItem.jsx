@@ -1,29 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { AppContext } from '../../state/AppContext';
+import { types } from '../../types/types';
 
 const VideoContainer = styled.div`
   margin: 10px;
   cursor: pointer;
 `;
 const VideoTitle = styled.h3`
-  color: #ffffff;
+  color: ${(props) => props.theme.titles.color};
 `;
 
 const VideoText = styled.p`
-  color: rgb(170, 170, 170);
+  color: ${(props) => props.theme.subtitles.color};
 `;
 
 export const VideoItem = (props) => {
-  const { setSelectedVideo } = props;
+  const { dispatch } = useContext(AppContext);
+
   const handleVideoClick = (video) => {
-    setSelectedVideo(video);
-    // console.log(video);
+    dispatch({
+      type: types.setSelectedVideo,
+      payload: video,
+    });
   };
   return (
     <VideoContainer onClick={() => handleVideoClick(props)}>
       <img
         width="100%"
-        height="200px"
+        height="150px"
         style={{ objectFit: 'cover' }}
         src={props.snippet.thumbnails.high.url}
         alt="img"

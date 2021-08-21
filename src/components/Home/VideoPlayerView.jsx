@@ -16,11 +16,11 @@ const ItemPlayerView = styled.div`
 `;
 
 const Title = styled.h2`
-  color: white;
+  color: ${(props) => props.theme.titles.color};
 `;
 
 const Description = styled.p`
-  color: #ffffff8c;
+  color: ${(props) => props.theme.subtitles.color};
 `;
 
 const Videoiframe = styled.iframe`
