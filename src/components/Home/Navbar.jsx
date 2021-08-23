@@ -9,6 +9,8 @@ import {
   Text,
   CheckBoxLabel,
   CheckBox,
+  DivDarkMode,
+  DivSwitch,
 } from './styles/NavBar';
 
 export const Navbar = ({ setSelectedVideo }) => {
@@ -29,13 +31,9 @@ export const Navbar = ({ setSelectedVideo }) => {
         Inicio
       </Links>
       <SearchBar setSelectedVideo={setSelectedVideo} />
-      <div style={{ display: 'flex' }}>
-        <div>
-          <Text href="#about">Oscuro</Text>
-        </div>
-        <div
-          style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
-        >
+      <DivDarkMode>
+        <Text href="#about">Oscuro</Text>
+        <DivSwitch>
           <CheckBoxWrapper>
             <CheckBox
               defaultChecked={darkTheme}
@@ -45,8 +43,8 @@ export const Navbar = ({ setSelectedVideo }) => {
             />
             <CheckBoxLabel htmlFor="checkbox" />
           </CheckBoxWrapper>
-        </div>
-      </div>
+        </DivSwitch>
+      </DivDarkMode>
     </Bar>
   );
 };

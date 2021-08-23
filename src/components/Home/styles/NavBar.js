@@ -83,3 +83,13 @@ export const CheckBox = styled.input`
     }
   }
 `;
+
+export const DivDarkMode = styled.div`
+  display: flex;
+`;
+
+export const DivSwitch = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
