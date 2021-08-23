@@ -1,18 +1,7 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
-
-const VideoBox = styled.div`
-  cursor: pointer;
-  display: flex;
-  padding: 8px;
-`;
-
-const DescriptionBox = styled.div`
-  padding: 8px;
-  color: ${(props) => props.theme.titles.color};
-`;
+import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
 export const SidebarItem = ({ video }) => {
   const { dispatch } = useContext(AppContext);

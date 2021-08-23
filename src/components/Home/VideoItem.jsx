@@ -1,19 +1,7 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
-
-const VideoContainer = styled.div`
-  margin: 10px;
-  cursor: pointer;
-`;
-const VideoTitle = styled.h3`
-  color: ${(props) => props.theme.titles.color};
-`;
-
-const VideoText = styled.p`
-  color: ${(props) => props.theme.subtitles.color};
-`;
+import { VideoContainer, VideoTitle, VideoText } from './styles/VideoItem';
 
 export const VideoItem = (props) => {
   const { dispatch } = useContext(AppContext);

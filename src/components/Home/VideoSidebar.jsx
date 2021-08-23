@@ -1,11 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { SidebarItem } from './SidebarItem';
-
-const SidebarLayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-`;
+import { SidebarLayout } from './styles/VideoSidebar';
 
 export const VideoSidebar = ({ videos, setSelectedVideo }) => {
   return (

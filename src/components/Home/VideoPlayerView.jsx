@@ -1,34 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import {
+  VideoContainer,
+  ItemPlayerView,
+  Videoiframe,
+  Title,
+  Description,
+} from './styles/VideoPlayerView';
 import { VideoSidebar } from './VideoSidebar';
-
-const VideoContainer = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  padding: 16px;
-  @media only screen and (max-width: 1200px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ItemPlayerView = styled.div`
-  padding: 8px;
-`;
-
-const Title = styled.h2`
-  color: ${(props) => props.theme.titles.color};
-`;
-
-const Description = styled.p`
-  color: ${(props) => props.theme.subtitles.color};
-`;
-
-const Videoiframe = styled.iframe`
-  height: 700px;
-  @media only screen and (max-width: 1200px) {
-    height: 300px;
-  }
-`;
 
 export const VideoPlayerView = ({ item, videos, setSelectedVideo }) => {
   const {
