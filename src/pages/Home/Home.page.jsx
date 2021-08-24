@@ -1,21 +1,15 @@
 import React, { useContext } from 'react';
 import { VideoGrid } from '../../components/Home/VideoGrid';
-import { VideoPlayerView } from '../../components/Home/VideoPlayerView';
+// import { useVideos } from '../../hooks/fetchVideos';
 import { AppContext } from '../../state/AppContext';
-import { useVideos } from '../../hooks/fetchVideos';
 
 function HomePage() {
+  // const [videos] = useVideos();
   const {
-    state: { selectedVideo },
+    state: { videos },
   } = useContext(AppContext);
-  const [videos] = useVideos();
 
-  return (
-    <>
-      {!selectedVideo && <VideoGrid items={videos} />}
-      {selectedVideo && <VideoPlayerView videos={videos} item={selectedVideo} />}
-    </>
-  );
+  return <VideoGrid items={videos} />;
 }
 
 export default HomePage;

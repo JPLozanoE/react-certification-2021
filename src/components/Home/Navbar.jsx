@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
 import { SearchBar } from './SearchBar';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
@@ -14,10 +15,16 @@ import {
 } from './styles/NavBar';
 
 export const Navbar = ({ setSelectedVideo }) => {
+  const history = useHistory();
   const {
     state: { darkTheme },
     dispatch,
   } = useContext(AppContext);
+
+  const handleClick = () => {
+    dispatch({ type: types.setSelectedVideo, payload: null });
+    history.push('/');
+  };
 
   const handleToggleChange = () => {
     dispatch({
@@ -27,7 +34,7 @@ export const Navbar = ({ setSelectedVideo }) => {
 
   return (
     <Bar className="topnav" id="myTopnav">
-      <Links href="#home" className="active">
+      <Links onClick={handleClick} href="#" className="active">
         Inicio
       </Links>
       <SearchBar setSelectedVideo={setSelectedVideo} />

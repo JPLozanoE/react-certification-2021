@@ -21,6 +21,7 @@ export const SearchBar = () => {
       type: types.changeSearchQuery,
       payload: input,
     });
+    setInput('');
   };
 
   return (

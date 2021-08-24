@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../../pages/Home';
 import Layout from '../Layout';
@@ -6,15 +6,23 @@ import GlobalStyles, { FullWidthContainer } from '../../__globalStyles';
 import { Navbar } from '../Home/Navbar';
 import { AppContext } from '../../state/AppContext';
 import { VideoPlayerView } from '../Home/VideoPlayerView';
-import { useVideos } from '../../hooks/fetchVideos';
+// import { useVideos } from '../../hooks/fetchVideos';
+import { searchYouTube } from '../../utils/searchYoutube';
+import { types } from '../../types/types';
 
 function Router() {
   const {
-    state: { selectedVideo },
+    state: { selectedVideo, search },
+    dispatch,
   } = useContext(AppContext);
 
-  const [videos] = useVideos();
-  console.log(videos);
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const res = await searchYouTube(search);
+      dispatch({ type: types.setRecommendedVideos, payload: res.items });
+    };
+    fetchVideos();
+  }, [search, dispatch]);
 
   return (
     <BrowserRouter>

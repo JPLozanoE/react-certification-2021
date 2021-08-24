@@ -9,6 +9,7 @@ export const App = () => {
     darkTheme: true,
     search: '',
     selectedVideo: null,
+    videos: [],
   });
 
   return (
