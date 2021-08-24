@@ -24,7 +24,8 @@ body{
     font-weight: 400;
     line-height: 1.6;
     font-size: 1.6rem;
-    color: #333;
+    background-color: ${(props) => props.theme.main.backgroundColor};
+
 
 }
 `;

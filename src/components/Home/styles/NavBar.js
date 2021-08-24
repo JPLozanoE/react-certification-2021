@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Bar = styled.div`
   padding: 0px 16px;
@@ -20,7 +21,7 @@ export const Bar = styled.div`
   }
 `;
 
-export const Links = styled.a`
+export const Links = styled(Link)`
   color: white;
   float: left;
   display: block;
@@ -42,6 +43,7 @@ export const Text = styled.p`
 
 export const CheckBoxWrapper = styled.div`
   position: relative;
+  margin: 8px;
 `;
 export const CheckBoxLabel = styled.label`
   position: absolute;
@@ -90,6 +92,7 @@ export const DivDarkMode = styled.div`
 
 export const DivSwitch = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
 `;

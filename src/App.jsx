@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
-import Router from './components/App/Router.component';
 import { appReducer } from './state/appReducer';
 import { AppContext } from './state/AppContext';
 import Theme from './components/Layout/Theme';
+import MainRouter from './routers/MainRouter';
 
 export const App = () => {
   const [state, dispatch] = useReducer(appReducer, {
@@ -10,13 +10,18 @@ export const App = () => {
     search: '',
     selectedVideo: null,
     videos: [],
+    auth: {
+      isLogged: false,
+      displayName: '',
+      uid: null,
+    },
   });
 
   return (
     <div>
       <AppContext.Provider value={{ state, dispatch }}>
         <Theme>
-          <Router />
+          <MainRouter />
         </Theme>
       </AppContext.Provider>
     </div>

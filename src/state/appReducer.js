@@ -27,6 +27,26 @@ export const appReducer = (state = {}, action) => {
         videos: action.payload,
       };
 
+    case types.login:
+      return {
+        ...state,
+        auth: {
+          isLogged: true,
+          displayName: action.payload.displayName,
+          uid: action.payload.uid,
+        },
+      };
+
+    case types.logout:
+      return {
+        ...state,
+        auth: {
+          isLogged: false,
+          displayName: '',
+          uid: null,
+        },
+      };
+
     default:
       break;
   }

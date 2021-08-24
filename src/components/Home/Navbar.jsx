@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
+// import { Link } from 'react-router-dom';
 import { SearchBar } from './SearchBar';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
@@ -15,15 +16,20 @@ import {
 } from './styles/NavBar';
 
 export const Navbar = ({ setSelectedVideo }) => {
-  const history = useHistory();
   const {
-    state: { darkTheme },
+    state: {
+      darkTheme,
+      auth: { isLogged },
+    },
     dispatch,
   } = useContext(AppContext);
 
   const handleClick = () => {
     dispatch({ type: types.setSelectedVideo, payload: null });
-    history.push('/');
+  };
+
+  const handleLogout = () => {
+    dispatch({ type: types.logout });
   };
 
   const handleToggleChange = () => {
@@ -34,9 +40,10 @@ export const Navbar = ({ setSelectedVideo }) => {
 
   return (
     <Bar className="topnav" id="myTopnav">
-      <Links onClick={handleClick} href="#" className="active">
+      <Links onClick={handleClick} to="/">
         Inicio
       </Links>
+      {/* <Links href="#" className="active" /> */}
       <SearchBar setSelectedVideo={setSelectedVideo} />
       <DivDarkMode>
         <Text href="#about">Oscuro</Text>
@@ -50,6 +57,13 @@ export const Navbar = ({ setSelectedVideo }) => {
             />
             <CheckBoxLabel htmlFor="checkbox" />
           </CheckBoxWrapper>
+          {isLogged ? (
+            <Links onClick={handleLogout} to="/">
+              Logout
+            </Links>
+          ) : (
+            <Links to="/auth">Login</Links>
+          )}
         </DivSwitch>
       </DivDarkMode>
     </Bar>

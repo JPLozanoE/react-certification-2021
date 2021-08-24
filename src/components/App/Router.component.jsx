@@ -5,7 +5,7 @@ import Layout from '../Layout';
 import GlobalStyles, { FullWidthContainer } from '../../__globalStyles';
 import { Navbar } from '../Home/Navbar';
 import { AppContext } from '../../state/AppContext';
-import { VideoPlayerView } from '../Home/VideoPlayerView';
+// import { VideoPlayerView } from '../Home/VideoPlayerView';
 // import { useVideos } from '../../hooks/fetchVideos';
 import { searchYouTube } from '../../utils/searchYoutube';
 import { types } from '../../types/types';
