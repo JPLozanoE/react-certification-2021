@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   VideoContainer,
   ItemPlayerView,
@@ -7,10 +7,14 @@ import {
   Description,
 } from './styles/VideoPlayerView';
 import { VideoSidebar } from './VideoSidebar';
-import { useVideos } from '../../hooks/fetchVideos';
+// import { useVideos } from '../../hooks/fetchVideos';
+import { AppContext } from '../../state/AppContext';
 
 export const VideoPlayerView = ({ item }) => {
-  const [videos] = useVideos();
+  // const [videos] = useVideos();
+  const {
+    state: { videos },
+  } = useContext(AppContext);
   const {
     id: { videoId },
     snippet: { title, description },
