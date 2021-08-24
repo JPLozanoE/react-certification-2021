@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../../pages/Home';
 import Layout from '../Layout';
@@ -9,8 +9,10 @@ import { VideoPlayerView } from '../Home/VideoPlayerView';
 // import { useVideos } from '../../hooks/fetchVideos';
 import { searchYouTube } from '../../utils/searchYoutube';
 import { types } from '../../types/types';
+import { VideoPage } from '../../pages/Video/Video.page';
 
 function Router() {
+  const [error, setError] = useState(false);
   const {
     state: { selectedVideo, search },
     dispatch,
@@ -19,6 +21,7 @@ function Router() {
   useEffect(() => {
     const fetchVideos = async () => {
       const res = await searchYouTube(search);
+      if (res.error) setError(true);
       dispatch({ type: types.setRecommendedVideos, payload: res.items });
     };
     fetchVideos();
@@ -30,18 +33,18 @@ function Router() {
       <Layout>
         <Navbar />
         <FullWidthContainer>
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/video/:videoId">
-              {selectedVideo !== null ? (
-                <VideoPlayerView item={selectedVideo} />
-              ) : (
-                <Redirect to="/" />
-              )}
-            </Route>
-          </Switch>
+          {error ? (
+            <p>Imposible mostrar en este momento</p>
+          ) : (
+            <Switch>
+              <Route exact path="/">
+                <HomePage />
+              </Route>
+              <Route exact path="/video/:videoId">
+                {selectedVideo !== null ? <VideoPage /> : <Redirect to="/" />}
+              </Route>
+            </Switch>
+          )}
         </FullWidthContainer>
       </Layout>
     </BrowserRouter>

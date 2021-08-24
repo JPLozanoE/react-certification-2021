@@ -7,18 +7,16 @@ import {
   Description,
 } from './styles/VideoPlayerView';
 import { VideoSidebar } from './VideoSidebar';
-// import { useVideos } from '../../hooks/fetchVideos';
 import { AppContext } from '../../state/AppContext';
 
-export const VideoPlayerView = ({ item }) => {
-  // const [videos] = useVideos();
+export const VideoPlayerView = () => {
   const {
-    state: { videos },
+    state: { videos, selectedVideo },
   } = useContext(AppContext);
   const {
     id: { videoId },
     snippet: { title, description },
-  } = item;
+  } = selectedVideo;
   return (
     <VideoContainer>
       <ItemPlayerView>
