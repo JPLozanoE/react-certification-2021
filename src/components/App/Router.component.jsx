@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../../pages/Home';
 import Layout from '../Layout';
 import GlobalStyles, { FullWidthContainer } from '../../__globalStyles';
@@ -27,7 +27,11 @@ function Router() {
               <HomePage />
             </Route>
             <Route exact path="/video/:videoId">
-              <VideoPlayerView videos={videos} item={selectedVideo} />
+              {selectedVideo !== null ? (
+                <VideoPlayerView item={selectedVideo} />
+              ) : (
+                <Redirect to="/" />
+              )}
             </Route>
           </Switch>
         </FullWidthContainer>
