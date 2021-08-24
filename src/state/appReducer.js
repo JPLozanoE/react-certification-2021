@@ -1,6 +1,7 @@
 import { types } from '../types/types';
 
 export const appReducer = (state = {}, action) => {
+  console.log(state);
   switch (action.type) {
     case types.changeSearchQuery:
       return {
@@ -18,6 +19,12 @@ export const appReducer = (state = {}, action) => {
       return {
         ...state,
         darkTheme: !state.darkTheme,
+      };
+
+    case types.setRecommendedVideos:
+      return {
+        ...state,
+        videos: action.payload,
       };
 
     default:

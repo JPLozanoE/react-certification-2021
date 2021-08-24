@@ -1,36 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Navbar } from '../../components/Home/Navbar';
-import { FullWidthContainer } from '../../__globalStyles';
+import React, { useContext } from 'react';
 import { VideoGrid } from '../../components/Home/VideoGrid';
-import { videoData } from '../../__mock__/videoData';
 import { VideoPlayerView } from '../../components/Home/VideoPlayerView';
 import { AppContext } from '../../state/AppContext';
-import { searchYouTube } from '../../utils/searchYoutube';
+import { useVideos } from '../../hooks/fetchVideos';
 
 function HomePage() {
-  const { items } = videoData;
   const {
-    state: { search, selectedVideo },
+    state: { selectedVideo },
   } = useContext(AppContext);
-  const [videos, setVideos] = useState(items);
-
-  useEffect(() => {
-    const fetchVideos = async () => {
-      const res = await searchYouTube(search);
-      setVideos(res.items);
-    };
-    if (search !== '') {
-      fetchVideos();
-    }
-  }, [search]);
+  const [videos] = useVideos();
 
   return (
     <>
-      <FullWidthContainer>
-        <Navbar />
-        {!selectedVideo && <VideoGrid items={videos} />}
-        {selectedVideo && <VideoPlayerView videos={videos} item={selectedVideo} />}
-      </FullWidthContainer>
+      {!selectedVideo && <VideoGrid items={videos} />}
+      {selectedVideo && <VideoPlayerView videos={videos} item={selectedVideo} />}
     </>
   );
 }
