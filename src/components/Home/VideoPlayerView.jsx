@@ -7,8 +7,10 @@ import {
   Description,
 } from './styles/VideoPlayerView';
 import { VideoSidebar } from './VideoSidebar';
+import { useVideos } from '../../hooks/fetchVideos';
 
-export const VideoPlayerView = ({ item, videos, setSelectedVideo }) => {
+export const VideoPlayerView = ({ item }) => {
+  const [videos] = useVideos();
   const {
     id: { videoId },
     snippet: { title, description },
@@ -28,7 +30,7 @@ export const VideoPlayerView = ({ item, videos, setSelectedVideo }) => {
         <Description>{description}</Description>
       </ItemPlayerView>
       <ItemPlayerView>
-        <VideoSidebar setSelectedVideo={setSelectedVideo} videos={videos} />
+        <VideoSidebar videos={videos} />
       </ItemPlayerView>
     </VideoContainer>
   );

@@ -14,6 +14,7 @@ function Router() {
   } = useContext(AppContext);
 
   const [videos] = useVideos();
+  console.log(videos);
 
   return (
     <BrowserRouter>
