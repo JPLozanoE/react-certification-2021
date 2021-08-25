@@ -49,7 +49,10 @@ export const appReducer = (state = {}, action) => {
     case types.addFavoriteVideo:
       return {
         ...state,
-        favoriteVideos: [...state.favoriteVideos, action.payload],
+        favoriteVideos: [
+          ...state.favoriteVideos,
+          { ...action.payload, isFavorite: true },
+        ],
       };
 
     case types.deleteFavoriteVideo:

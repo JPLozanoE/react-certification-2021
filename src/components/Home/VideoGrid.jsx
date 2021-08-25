@@ -3,6 +3,7 @@ import { VideoContainer } from './styles/VideoContainer';
 import { VideoItem } from './VideoItem';
 
 export const VideoGrid = ({ items, edit }) => {
+  console.log(edit);
   return (
     <VideoContainer>
       {items.map((video) => (

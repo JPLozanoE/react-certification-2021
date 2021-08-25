@@ -13,7 +13,7 @@ import {
   DivSwitch,
 } from './styles/NavBar';
 
-export const Navbar = ({ setSelectedVideo }) => {
+export const Navbar = () => {
   const {
     state: {
       darkTheme,
@@ -42,7 +42,7 @@ export const Navbar = ({ setSelectedVideo }) => {
         Home
       </Links>
       {/* <Links href="#" className="active" /> */}
-      <SearchBar setSelectedVideo={setSelectedVideo} />
+      <SearchBar />
       <DivDarkMode>
         <Text href="#about">Dark mode</Text>
         <DivSwitch>
