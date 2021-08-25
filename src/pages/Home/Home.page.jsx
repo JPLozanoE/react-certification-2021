@@ -9,7 +9,7 @@ function HomePage() {
     state: { videos },
   } = useContext(AppContext);
 
-  return <VideoGrid items={videos} />;
+  return <VideoGrid edit={false} items={videos} />;
 }
 
 export default HomePage;

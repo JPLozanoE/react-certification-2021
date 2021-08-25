@@ -28,6 +28,7 @@ export const VideoPlayerView = () => {
           allowFullScreen
           title="Embedded youtube"
         />
+        <button type="button">Agregar a favoritos</button>
         <Title>{title}</Title>
         <Description>{description}</Description>
       </ItemPlayerView>

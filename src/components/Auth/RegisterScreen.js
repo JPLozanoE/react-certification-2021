@@ -1,22 +1,16 @@
 /* eslint-disable react/jsx-filename-extension */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import validator from 'validator';
-// import { useDispatch, useSelector } from 'react-redux';
 import { firebase } from '../../firebase/firebase-config';
 import { useForm } from '../../hooks/useForm';
 import { StyledLink } from '../../pages/Auth/styles/Auth';
 import { Button, Input, Title } from './styles/AuthStyles';
-// import { removeError, setError } from '../../actions/ui';
-// import { startRegisterWithEmailPasswordName } from '../../actions/auth';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
 
 export const RegisterScreen = () => {
   const { dispatch } = useContext(AppContext);
-  //   const dispatch = useDispatch();
-  //   const { ui } = useSelector((state) => state);
-  //   const { msgError } = ui;
-  //   console.log(msgError);
+  const [msgError, msgSetError] = useState('');
 
   const [{ name, email, password, password2 }, handleInputChange] = useForm({
     name: '',
@@ -25,37 +19,37 @@ export const RegisterScreen = () => {
     password2: '',
   });
   const isFormValid = () => {
-    // let error=false;
+    let error = false;
 
-    // if (name.trim().length === 0) {
-    // console.log('Name is required')
-    // error=true;
-    //   dispatch(setError('Name is required'));
-    // return false;
-    // }
+    if (name.trim().length === 0) {
+      console.log('Name is required');
+      error = true;
+      msgSetError('Name is required');
+      return false;
+    }
 
-    // if (!validator.isEmail(email)) {
-    // console.log('Email is not valid')
-    // error=true;
-    //   dispatch(setError('Email is not valid'));
-    // return false;
-    // }
+    if (!validator.isEmail(email)) {
+      console.log('Email is not valid');
+      error = true;
+      msgSetError('Email is not valid');
 
-    // if (password !== password2 || password.length < 5) {
-    // console.log('Password should be at least 6 characters and match eachother');
-    // error=true;
-    //   dispatch(setError('Password should be at least 6 characters and match eachother'));
-    // return false;
-    // }
-    // dispatch(removeError());
-    return true;
-    // return error===false ? true : false
+      return false;
+    }
+
+    if (password !== password2 || password.length < 5) {
+      console.log('Password should be at least 6 characters and match eachother');
+      error = true;
+      msgSetError('Password should be at least 6 characters and match eachother');
+
+      return false;
+    }
+    msgSetError('');
+    return error === false;
   };
 
   const handleRegister = (e) => {
     e.preventDefault();
     if (isFormValid()) {
-      //   dispatch(startRegisterWithEmailPasswordName(email, password, name));
       firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
@@ -66,22 +60,19 @@ export const RegisterScreen = () => {
             type: types.login,
             payload: { displayName: user.displayName, uid: user.uid },
           });
-
-          // dispatch(login(user.uid, user.displayName));
         })
         .catch((error) => {
           console.error(error.message);
         });
       console.log('Formulario correcto');
     }
-    // console.log(name,email,password,password2,)
   };
 
   return (
     <>
       <Title className="auth__title">Register</Title>
       <form onSubmit={handleRegister}>
-        {/* {msgError && <div className="auth__alert-error">{msgError}</div>} */}
+        {msgError && <div className="auth__alert-error">{msgError}</div>}
 
         <Input
           className="auth__input"
@@ -120,11 +111,7 @@ export const RegisterScreen = () => {
           onChange={handleInputChange}
         />
 
-        <Button
-          // disabled={true}
-          className="btn btn-primary btn-block mb-5"
-          type="submit"
-        >
+        <Button className="btn btn-primary btn-block mb-5" type="submit">
           Register
         </Button>
         <div>

@@ -10,7 +10,7 @@ export const VideoSidebar = ({ videos, setSelectedVideo }) => {
           return (
             <SidebarItem
               setSelectedVideo={setSelectedVideo}
-              key={video.etag}
+              key={video.id.videoId}
               video={video}
             />
           );

@@ -1,35 +1,66 @@
-import React, { useContext } from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
 import { VideoContainer, VideoTitle, VideoText } from './styles/VideoItem';
 
-export const VideoItem = (props) => {
+export const VideoItem = ({ video, edit }) => {
   const { dispatch } = useContext(AppContext);
   const history = useHistory();
+  const [isFavorite, setIsFavorite] = useState(edit);
 
-  const handleVideoClick = (video) => {
-    console.log(video.id.videoId);
+  const handleVideoClick = (videoPayload) => {
     dispatch({
       type: types.setSelectedVideo,
-      payload: video,
+      payload: videoPayload,
     });
     history.push(`/video/${video.id.videoId}`);
   };
+
+  const handleAddFavorite = (videoPayload) => {
+    if (edit) {
+      console.log('eliminar video con el Id', videoPayload.id.videoId);
+      dispatch({
+        type: types.deleteFavoriteVideo,
+        payload: videoPayload.id.videoId,
+      });
+    } else {
+      setIsFavorite(true);
+      dispatch({
+        type: types.addFavoriteVideo,
+        payload: videoPayload,
+      });
+    }
+  };
+
   return (
-    <VideoContainer onClick={() => handleVideoClick(props)}>
+    <VideoContainer>
       <img
         width="100%"
         height="150px"
         style={{ objectFit: 'cover' }}
-        src={props.snippet.thumbnails.high.url}
+        src={video.snippet.thumbnails.high.url}
         alt="img"
-        aria-label={props.snippet.title}
+        aria-label={video.snippet.title}
+        onClick={() => handleVideoClick(video)}
       />
       <div style={{ padding: '10px' }}>
-        <VideoTitle>{props.snippet.title}</VideoTitle>
-        <VideoText>{props.snippet.channelTitle}</VideoText>
-        <VideoText>Publicado el {props.snippet.publishTime}</VideoText>
+        <div>
+          <VideoTitle onClick={() => handleVideoClick(video)}>
+            {video.snippet.title}
+          </VideoTitle>
+          <button
+            disabled={isFavorite && !edit}
+            onClick={() => handleAddFavorite(video)}
+            type="button"
+          >
+            {edit ? 'Eliminar de favoritos' : 'Agregar a favoritos'}
+          </button>
+        </div>
+        <VideoText>{video.snippet.channelTitle}</VideoText>
+        <VideoText>Publicado el {video.snippet.publishTime}</VideoText>
       </div>
     </VideoContainer>
   );

@@ -1,6 +1,4 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router';
-// import { Link } from 'react-router-dom';
 import { SearchBar } from './SearchBar';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
@@ -58,9 +56,12 @@ export const Navbar = ({ setSelectedVideo }) => {
             <CheckBoxLabel htmlFor="checkbox" />
           </CheckBoxWrapper>
           {isLogged ? (
-            <Links onClick={handleLogout} to="/">
-              Logout
-            </Links>
+            <>
+              <Links onClick={handleLogout} to="/">
+                Logout
+              </Links>
+              <Links to="/favorites">Favorites</Links>
+            </>
           ) : (
             <Links to="/auth">Login</Links>
           )}

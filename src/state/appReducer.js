@@ -47,6 +47,20 @@ export const appReducer = (state = {}, action) => {
         },
       };
 
+    case types.addFavoriteVideo:
+      return {
+        ...state,
+        favoriteVideos: [...state.favoriteVideos, action.payload],
+      };
+
+    case types.deleteFavoriteVideo:
+      return {
+        ...state,
+        favoriteVideos: state.favoriteVideos.filter(
+          (favoriteVideo) => favoriteVideo.id.videoId !== action.payload
+        ),
+      };
+
     default:
       break;
   }

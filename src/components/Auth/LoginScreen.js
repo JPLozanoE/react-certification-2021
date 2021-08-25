@@ -1,27 +1,18 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/jsx-filename-extension */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import validator from 'validator';
 import { firebase, googleAuthProvider } from '../../firebase/firebase-config';
-// import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import { StyledLink } from '../../pages/Auth/styles/Auth';
 import { Button, Input, SocialNetworksDiv, Title, GoogleDiv } from './styles/AuthStyles';
-// import { removeError, setError } from '../../actions/ui';
-// import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
 
 export const LoginScreen = () => {
   const { dispatch } = useContext(AppContext);
-
-  //   const { ui } = useSelector((state) => state);
-  //   const { msgError, loading } = ui;
-  //   console.log(msgError);
-  //   console.log(loading);
-
-  //   const dispatch = useDispatch();
+  const [msgError, setMsgError] = useState('');
 
   const [formValues, handleInputChange] = useForm({
     email: '',
@@ -31,16 +22,16 @@ export const LoginScreen = () => {
   const { email, password } = formValues;
   const isFormValid = () => {
     if (!validator.isEmail(email)) {
-      //   dispatch(setError('Email is not valid'));
+      setMsgError('Email is not valid');
       return false;
     }
 
     if (password.length < 6) {
-      //   dispatch(setError('Invalid password'));
+      setMsgError('Invalid password');
       return false;
     }
 
-    // dispatch(removeError());
+    setMsgError('');
     return true;
   };
 
@@ -63,11 +54,9 @@ export const LoginScreen = () => {
           console.error(error.message);
         });
     }
-    // dispatch(startLoginEmailPassword(email, password));
   };
 
   const handleGoogleLogin = () => {
-    // dispatch(startGoogleLogin());
     firebase
       .auth()
       .signInWithPopup(googleAuthProvider)
@@ -83,9 +72,8 @@ export const LoginScreen = () => {
   return (
     <>
       <Title>Login</Title>
-      {/* <h3 className="auth__title">Login</h3> */}
       <form onSubmit={handleLogin}>
-        {/* {msgError && <div className="auth__alert-error">{msgError}</div>} */}
+        {msgError && <div className="auth__alert-error">{msgError}</div>}
         <Input
           className="auth__input"
           type="text"
