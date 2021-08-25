@@ -56,6 +56,9 @@ export const appReducer = (state = {}, action) => {
     case types.deleteFavoriteVideo:
       return {
         ...state,
+        videos: state.videos.map((video) =>
+          video.id.videoId === action.payload ? { ...video, isFavorite: false } : video
+        ),
         favoriteVideos: state.favoriteVideos.filter(
           (favoriteVideo) => favoriteVideo.id.videoId !== action.payload
         ),

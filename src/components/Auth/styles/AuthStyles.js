@@ -21,25 +21,6 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
-  background-color: gray;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 12px;
-  padding: 7px 10px 7px 10px;
-
-  transition: color 0.3s ease;
-
-  &:focus {
-    outline: none;
-  }
-
-  /* &:hover {
-    color: darken($color: white, $amount: 15);
-  } */
-`;
-
 export const SocialNetworksDiv = styled.div`
   align-items: center;
   display: flex;

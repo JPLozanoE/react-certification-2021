@@ -12,6 +12,7 @@ export const VideoSidebar = ({ videos, setSelectedVideo }) => {
               setSelectedVideo={setSelectedVideo}
               key={video.id.videoId}
               video={video}
+              isFavorite={video?.isFavorite}
             />
           );
         }

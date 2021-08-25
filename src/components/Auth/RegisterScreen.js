@@ -4,9 +4,10 @@ import validator from 'validator';
 import { firebase } from '../../firebase/firebase-config';
 import { useForm } from '../../hooks/useForm';
 import { StyledLink } from '../../pages/Auth/styles/Auth';
-import { Button, Input, Title } from './styles/AuthStyles';
+import { Input, Title } from './styles/AuthStyles';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
+import { Button } from '../../__globalStyles';
 
 export const RegisterScreen = () => {
   const { dispatch } = useContext(AppContext);

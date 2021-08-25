@@ -7,6 +7,8 @@ export const VideoBox = styled.div`
 `;
 
 export const DescriptionBox = styled.div`
+  display: flex;
+  flex-flow: column;
   padding: 8px;
   color: ${(props) => props.theme.titles.color};
 `;

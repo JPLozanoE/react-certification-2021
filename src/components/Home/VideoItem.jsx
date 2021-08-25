@@ -5,18 +5,27 @@ import { useHistory } from 'react-router';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
 import { VideoContainer, VideoTitle, VideoText } from './styles/VideoItem';
+import { Button } from '../../__globalStyles';
 
 export const VideoItem = ({ video, edit, isFavorite }) => {
-  const { dispatch } = useContext(AppContext);
+  const {
+    dispatch,
+    state: {
+      auth: { isLogged },
+    },
+  } = useContext(AppContext);
   const history = useHistory();
-  // const [isFavorite, setIsFavorite] = useState(edit);
 
   const handleVideoClick = (videoPayload) => {
     dispatch({
       type: types.setSelectedVideo,
       payload: videoPayload,
     });
-    history.push(`/video/${video.id.videoId}`);
+    if (edit) {
+      history.push(`/video/favorites/${video.id.videoId}`);
+    } else {
+      history.push(`/video/${video.id.videoId}`);
+    }
   };
 
   const handleAddFavorite = (videoPayload) => {
@@ -27,7 +36,6 @@ export const VideoItem = ({ video, edit, isFavorite }) => {
         payload: videoPayload.id.videoId,
       });
     } else {
-      // setIsFavorite(true);
       dispatch({
         type: types.addFavoriteVideo,
         payload: videoPayload,
@@ -55,13 +63,15 @@ export const VideoItem = ({ video, edit, isFavorite }) => {
           <VideoTitle onClick={() => handleVideoClick(video)}>
             {video.snippet.title}
           </VideoTitle>
-          <button
-            disabled={isFavorite && !edit}
-            onClick={() => handleAddFavorite(video)}
-            type="button"
-          >
-            {edit ? 'Eliminar de favoritos' : 'Agregar a favoritos'}
-          </button>
+          {isLogged && (
+            <Button
+              disabled={isFavorite && !edit}
+              onClick={() => handleAddFavorite(video)}
+              type="button"
+            >
+              {edit ? 'Eliminar de favoritos' : 'Agregar a favoritos'}
+            </Button>
+          )}
         </div>
         <VideoText>{video.snippet.channelTitle}</VideoText>
         <VideoText>Publicado el {video.snippet.publishTime}</VideoText>

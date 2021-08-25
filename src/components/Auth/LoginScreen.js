@@ -6,7 +6,9 @@ import validator from 'validator';
 import { firebase, googleAuthProvider } from '../../firebase/firebase-config';
 import { useForm } from '../../hooks/useForm';
 import { StyledLink } from '../../pages/Auth/styles/Auth';
-import { Button, Input, SocialNetworksDiv, Title, GoogleDiv } from './styles/AuthStyles';
+import { Input, SocialNetworksDiv, Title, GoogleDiv } from './styles/AuthStyles';
+import { Button } from '../../__globalStyles';
+
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
 

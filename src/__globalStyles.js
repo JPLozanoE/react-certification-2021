@@ -55,6 +55,29 @@ export const Container = styled.div`
   }
 `;
 
+export const Button = styled.button`
+  background-color: gray;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 7px 10px 7px 10px;
+
+  transition: color 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: #eae9e9;
+  }
+
+  /* &:hover {
+    color: darken($color: white, $amount: 15);
+  } */
+`;
+
 export const FullWidthContainer = styled.div`
   margin: 0;
   padding: 0;

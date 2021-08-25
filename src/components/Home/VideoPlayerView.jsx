@@ -9,9 +9,10 @@ import {
 import { VideoSidebar } from './VideoSidebar';
 import { AppContext } from '../../state/AppContext';
 
-export const VideoPlayerView = () => {
+export const VideoPlayerView = ({ favorites }) => {
+  console.log(favorites);
   const {
-    state: { videos, selectedVideo },
+    state: { videos, selectedVideo, favoriteVideos },
   } = useContext(AppContext);
   const {
     id: { videoId },
@@ -33,7 +34,7 @@ export const VideoPlayerView = () => {
         <Description>{description}</Description>
       </ItemPlayerView>
       <ItemPlayerView>
-        <VideoSidebar videos={videos} />
+        <VideoSidebar videos={favorites ? favoriteVideos : videos} />
       </ItemPlayerView>
     </VideoContainer>
   );

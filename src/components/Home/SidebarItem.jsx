@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
+import { Button } from '../../__globalStyles';
 import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
-export const SidebarItem = ({ video }) => {
+export const SidebarItem = ({ video, isFavorite }) => {
+  // console.log(video);
   const { dispatch } = useContext(AppContext);
   const history = useHistory();
 
@@ -16,6 +18,18 @@ export const SidebarItem = ({ video }) => {
     });
     history.push(`/video/${video.id.videoId}`);
   };
+
+  const handleAddFavorite = (videoPayload) => {
+    dispatch({
+      type: types.addFavoriteVideo,
+      payload: videoPayload,
+    });
+    dispatch({
+      type: types.updateRecommendedVideos,
+      payload: videoPayload.id.videoId,
+    });
+  };
+
   const {
     snippet: { title, thumbnails },
   } = video;
@@ -23,7 +37,18 @@ export const SidebarItem = ({ video }) => {
     <>
       <VideoBox onClick={handleClick}>
         <img src={thumbnails.default.url} alt="Imagen" />
-        <DescriptionBox>{title}</DescriptionBox>
+        <DescriptionBox>
+          {title}
+          <div>
+            <Button
+              disabled={isFavorite}
+              onClick={() => handleAddFavorite(video)}
+              type="button"
+            >
+              {isFavorite ? 'Eliminar de favoritos' : 'Agregar a Favoritos'}
+            </Button>
+          </div>
+        </DescriptionBox>
       </VideoBox>
       <hr />
     </>

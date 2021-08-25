@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
 import { Bar, SearchButton, SearchInput } from './styles/SearchBar';
 
 export const SearchBar = () => {
+  const history = useHistory();
   const [input, setInput] = useState('');
   const { dispatch } = useContext(AppContext);
 
@@ -22,6 +24,7 @@ export const SearchBar = () => {
       payload: input,
     });
     setInput('');
+    history.push('/');
   };
 
   return (
