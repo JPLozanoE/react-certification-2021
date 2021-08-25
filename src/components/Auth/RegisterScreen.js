@@ -23,14 +23,12 @@ export const RegisterScreen = () => {
     let error = false;
 
     if (name.trim().length === 0) {
-      console.log('Name is required');
       error = true;
       msgSetError('Name is required');
       return false;
     }
 
     if (!validator.isEmail(email)) {
-      console.log('Email is not valid');
       error = true;
       msgSetError('Email is not valid');
 
@@ -38,9 +36,8 @@ export const RegisterScreen = () => {
     }
 
     if (password !== password2 || password.length < 5) {
-      console.log('Password should be at least 6 characters and match eachother');
       error = true;
-      msgSetError('Password should be at least 6 characters and match eachother');
+      msgSetError('Password should be at least 6 characters and match each other');
 
       return false;
     }
@@ -56,7 +53,6 @@ export const RegisterScreen = () => {
         .createUserWithEmailAndPassword(email, password)
         .then(async ({ user }) => {
           await user.updateProfile({ displayName: name });
-          console.log(user);
           dispatch({
             type: types.login,
             payload: { displayName: user.displayName, uid: user.uid },
@@ -65,7 +61,6 @@ export const RegisterScreen = () => {
         .catch((error) => {
           console.error(error.message);
         });
-      console.log('Formulario correcto');
     }
   };
 

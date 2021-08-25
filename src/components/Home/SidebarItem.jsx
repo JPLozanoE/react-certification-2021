@@ -6,12 +6,10 @@ import { Button } from '../../__globalStyles';
 import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
 export const SidebarItem = ({ video, isFavorite }) => {
-  // console.log(video);
   const { dispatch } = useContext(AppContext);
   const history = useHistory();
 
   const handleClick = () => {
-    console.log(video.id.videoId);
     dispatch({
       type: types.setSelectedVideo,
       payload: video,
@@ -45,7 +43,7 @@ export const SidebarItem = ({ video, isFavorite }) => {
               onClick={() => handleAddFavorite(video)}
               type="button"
             >
-              {isFavorite ? 'Eliminar de favoritos' : 'Agregar a Favoritos'}
+              {isFavorite ? 'Delete from favorites' : 'Add to Favorites'}
             </Button>
           </div>
         </DescriptionBox>

@@ -19,14 +19,6 @@ export const App = () => {
       favoriteVideos: JSON.parse(localStorage.getItem('favoriteVideos')) || [],
     };
   };
-
-  // Estructura de Auth
-  // {
-  //   isLogged: false,
-  //   displayName: '',
-  //   uid: null,
-  // }
-
   const [state, dispatch] = useReducer(appReducer, {}, init);
 
   return (

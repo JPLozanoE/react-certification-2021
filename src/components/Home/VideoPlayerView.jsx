@@ -10,7 +10,6 @@ import { VideoSidebar } from './VideoSidebar';
 import { AppContext } from '../../state/AppContext';
 
 export const VideoPlayerView = ({ favorites }) => {
-  console.log(favorites);
   const {
     state: { videos, selectedVideo, favoriteVideos },
   } = useContext(AppContext);
@@ -29,7 +28,7 @@ export const VideoPlayerView = ({ favorites }) => {
           allowFullScreen
           title="Embedded youtube"
         />
-        <button type="button">Agregar a favoritos</button>
+        <button type="button">Add to favorites</button>
         <Title>{title}</Title>
         <Description>{description}</Description>
       </ItemPlayerView>

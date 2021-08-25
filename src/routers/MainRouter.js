@@ -29,8 +29,6 @@ function MainRouter() {
     dispatch,
   } = useContext(AppContext);
 
-  console.log(isLogged);
-
   useEffect(() => {
     const fetchVideos = async () => {
       const res = await searchYouTube(search);

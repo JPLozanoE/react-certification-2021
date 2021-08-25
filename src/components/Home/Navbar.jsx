@@ -39,12 +39,12 @@ export const Navbar = ({ setSelectedVideo }) => {
   return (
     <Bar className="topnav" id="myTopnav">
       <Links onClick={handleClick} to="/">
-        Inicio
+        Home
       </Links>
       {/* <Links href="#" className="active" /> */}
       <SearchBar setSelectedVideo={setSelectedVideo} />
       <DivDarkMode>
-        <Text href="#about">Oscuro</Text>
+        <Text href="#about">Dark mode</Text>
         <DivSwitch>
           <CheckBoxWrapper>
             <CheckBox

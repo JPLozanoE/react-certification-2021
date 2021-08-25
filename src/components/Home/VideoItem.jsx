@@ -30,7 +30,6 @@ export const VideoItem = ({ video, edit, isFavorite }) => {
 
   const handleAddFavorite = (videoPayload) => {
     if (edit) {
-      console.log('eliminar video con el Id', videoPayload.id.videoId);
       dispatch({
         type: types.deleteFavoriteVideo,
         payload: videoPayload.id.videoId,
@@ -69,7 +68,7 @@ export const VideoItem = ({ video, edit, isFavorite }) => {
               onClick={() => handleAddFavorite(video)}
               type="button"
             >
-              {edit ? 'Eliminar de favoritos' : 'Agregar a favoritos'}
+              {edit ? 'Delete from favorites' : 'Add to favorites'}
             </Button>
           )}
         </div>

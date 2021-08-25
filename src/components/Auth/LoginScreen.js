@@ -40,13 +40,11 @@ export const LoginScreen = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     isFormValid();
-    console.log(email, password);
     if (isFormValid()) {
       firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then(({ user }) => {
-          console.log(user);
           dispatch({
             type: types.login,
             payload: { displayName: user.displayName, uid: user.uid },
@@ -67,7 +65,6 @@ export const LoginScreen = () => {
           type: types.login,
           payload: { displayName: user.displayName, uid: user.uid },
         });
-        console.log(user);
       });
   };
 
@@ -95,12 +92,7 @@ export const LoginScreen = () => {
           onChange={handleInputChange}
         />
 
-        <Button
-          // {loading && (disabled={true})}
-          disabled={false}
-          className="btn btn-primary btn-block mb-1"
-          type="submit"
-        >
+        <Button disabled={false} className="btn btn-primary btn-block mb-1" type="submit">
           Login
         </Button>
 

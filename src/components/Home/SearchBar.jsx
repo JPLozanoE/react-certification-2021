@@ -29,9 +29,13 @@ export const SearchBar = () => {
 
   return (
     <Bar className="topnav" id="myTopnav">
-      <SearchInput value={input} onChange={handleChange} placeholder="Buscar" />
-      <SearchButton onClick={handleClick} name="buscar">
-        buscar
+      <SearchInput
+        value={input}
+        onChange={handleChange}
+        placeholder="Enter your search..."
+      />
+      <SearchButton onClick={handleClick} name="search">
+        Search
       </SearchButton>
     </Bar>
   );
