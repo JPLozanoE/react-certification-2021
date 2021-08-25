@@ -6,7 +6,12 @@ export const VideoGrid = ({ items, edit }) => {
   return (
     <VideoContainer>
       {items.map((video) => (
-        <VideoItem video={video} edit={edit} key={video.etag} />
+        <VideoItem
+          video={video}
+          isFavorite={video?.isFavorite}
+          edit={edit}
+          key={video.etag}
+        />
       ))}
     </VideoContainer>
   );

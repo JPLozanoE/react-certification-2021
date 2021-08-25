@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
 import { VideoContainer, VideoTitle, VideoText } from './styles/VideoItem';
 
-export const VideoItem = ({ video, edit }) => {
+export const VideoItem = ({ video, edit, isFavorite }) => {
   const { dispatch } = useContext(AppContext);
   const history = useHistory();
-  const [isFavorite, setIsFavorite] = useState(edit);
+  // const [isFavorite, setIsFavorite] = useState(edit);
 
   const handleVideoClick = (videoPayload) => {
     dispatch({
@@ -27,10 +27,14 @@ export const VideoItem = ({ video, edit }) => {
         payload: videoPayload.id.videoId,
       });
     } else {
-      setIsFavorite(true);
+      // setIsFavorite(true);
       dispatch({
         type: types.addFavoriteVideo,
         payload: videoPayload,
+      });
+      dispatch({
+        type: types.updateRecommendedVideos,
+        payload: videoPayload.id.videoId,
       });
     }
   };

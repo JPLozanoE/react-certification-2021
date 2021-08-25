@@ -61,6 +61,14 @@ export const appReducer = (state = {}, action) => {
         ),
       };
 
+    case types.updateRecommendedVideos:
+      return {
+        ...state,
+        videos: state.videos.map((video) =>
+          video.id.videoId === action.payload ? { ...video, isFavorite: true } : video
+        ),
+      };
+
     default:
       break;
   }
