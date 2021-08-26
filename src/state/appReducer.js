@@ -1,7 +1,7 @@
 import { types } from '../types/types';
 
 export const appReducer = (state = {}, action) => {
-  switch (action.type) {
+  switch (action?.type) {
     case types.changeSearchQuery:
       return {
         ...state,
@@ -75,6 +75,6 @@ export const appReducer = (state = {}, action) => {
       };
 
     default:
-      break;
+      return state;
   }
 };

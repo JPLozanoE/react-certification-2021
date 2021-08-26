@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <App/> Debe mostrarse correctamente 1`] = `
+<div>
+  <ContextProvider
+    value={
+      Object {
+        "dispatch": [Function],
+        "state": Object {
+          "auth": Object {
+            "displayName": "Pablo Lozano",
+            "isLogged": true,
+            "uid": "LNMUgAl5pXaGAjwXwINnyStBowD2",
+          },
+          "darkTheme": true,
+          "favoriteVideos": Array [],
+          "search": "",
+          "selectedVideo": null,
+          "videos": Array [],
+        },
+      }
+    }
+  >
+    <Theme>
+      <MainRouter />
+    </Theme>
+  </ContextProvider>
+</div>
+`;
