@@ -12,9 +12,9 @@ export const App = () => {
       selectedVideo: null,
       videos: [],
       auth: {
-        isLogged: true,
-        displayName: 'Pablo Lozano',
-        uid: 'LNMUgAl5pXaGAjwXwINnyStBowD2',
+        isLogged: false,
+        displayName: '',
+        uid: null,
       },
       favoriteVideos: JSON.parse(localStorage.getItem('favoriteVideos')) || [],
     };
