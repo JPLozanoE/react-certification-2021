@@ -1,40 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import {
+  VideoContainer,
+  ItemPlayerView,
+  Videoiframe,
+  Title,
+  Description,
+} from './styles/VideoPlayerView';
 import { VideoSidebar } from './VideoSidebar';
+import { AppContext } from '../../state/AppContext';
 
-const VideoContainer = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  padding: 16px;
-  @media only screen and (max-width: 1200px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ItemPlayerView = styled.div`
-  padding: 8px;
-`;
-
-const Title = styled.h2`
-  color: ${(props) => props.theme.titles.color};
-`;
-
-const Description = styled.p`
-  color: ${(props) => props.theme.subtitles.color};
-`;
-
-const Videoiframe = styled.iframe`
-  height: 700px;
-  @media only screen and (max-width: 1200px) {
-    height: 300px;
-  }
-`;
-
-export const VideoPlayerView = ({ item, videos, setSelectedVideo }) => {
+export const VideoPlayerView = ({ favorites }) => {
+  const {
+    state: { videos, selectedVideo, favoriteVideos },
+  } = useContext(AppContext);
   const {
     id: { videoId },
     snippet: { title, description },
-  } = item;
+  } = selectedVideo;
   return (
     <VideoContainer>
       <ItemPlayerView>
@@ -46,11 +28,12 @@ export const VideoPlayerView = ({ item, videos, setSelectedVideo }) => {
           allowFullScreen
           title="Embedded youtube"
         />
+        <button type="button">Add to favorites</button>
         <Title>{title}</Title>
         <Description>{description}</Description>
       </ItemPlayerView>
       <ItemPlayerView>
-        <VideoSidebar setSelectedVideo={setSelectedVideo} videos={videos} />
+        <VideoSidebar videos={favorites ? favoriteVideos : videos} edit={false} />
       </ItemPlayerView>
     </VideoContainer>
   );

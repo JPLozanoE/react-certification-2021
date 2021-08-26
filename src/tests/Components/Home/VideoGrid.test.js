@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Navbar } from '../../components/Home/Navbar';
+import { VideoGrid } from '../../../components/Home/VideoGrid';
 
-describe('Navbar', () => {
+describe('VideoGrid', () => {
   test('Should render properly', () => {
-    const component = render(<Navbar />);
+    const component = render(<VideoGrid />);
     expect(component).toMatchSnapshot();
   });
 });

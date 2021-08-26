@@ -1,22 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import { SidebarItem } from './SidebarItem';
+import { SidebarLayout } from './styles/VideoSidebar';
 
-const SidebarLayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-`;
-
-export const VideoSidebar = ({ videos, setSelectedVideo }) => {
+export const VideoSidebar = ({ videos, edit }) => {
   return (
     <SidebarLayout>
       {videos.map((video) => {
         if (video.id.videoId) {
           return (
             <SidebarItem
-              setSelectedVideo={setSelectedVideo}
-              key={video.etag}
+              key={video.id.videoId}
               video={video}
+              isFavorite={video?.isFavorite}
+              edit={edit}
             />
           );
         }

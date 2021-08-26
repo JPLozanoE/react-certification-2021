@@ -1,98 +1,34 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import { SearchBar } from './SearchBar';
 import { AppContext } from '../../state/AppContext';
 import { types } from '../../types/types';
+import {
+  Bar,
+  Links,
+  CheckBoxWrapper,
+  Text,
+  CheckBoxLabel,
+  CheckBox,
+  DivDarkMode,
+  DivSwitch,
+} from './styles/NavBar';
 
-const Bar = styled.div`
-  padding: 0px 16px;
-  background-color: #202020;
-  overflow: hidden;
-  display: flex;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-
-  @media only screen and (max-width: 600px) {
-    flex-direction: column;
-  }
-`;
-
-const Links = styled.a`
-  color: white;
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-`;
-
-const Text = styled.p`
-  color: white;
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-`;
-
-const CheckBoxWrapper = styled.div`
-  position: relative;
-`;
-const CheckBoxLabel = styled.label`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 26px;
-  border-radius: 15px;
-  background: #bebebe;
-  cursor: pointer;
-  &::after {
-    content: '';
-    display: block;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    margin: 3px;
-    background: #ffffff;
-    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-  }
-`;
-const CheckBox = styled.input`
-  opacity: 0;
-  z-index: 1;
-  border-radius: 15px;
-  width: 42px;
-  height: 26px;
-  &:checked + ${CheckBoxLabel} {
-    background: #4fbe79;
-    &::after {
-      content: '';
-      display: block;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      margin-left: 21px;
-      transition: 0.2s;
-    }
-  }
-`;
-
-export const Navbar = ({ setSelectedVideo }) => {
+export const Navbar = () => {
   const {
-    state: { darkTheme },
+    state: {
+      darkTheme,
+      auth: { isLogged },
+    },
     dispatch,
   } = useContext(AppContext);
+
+  const handleClick = () => {
+    dispatch({ type: types.setSelectedVideo, payload: null });
+  };
+
+  const handleLogout = () => {
+    dispatch({ type: types.logout });
+  };
 
   const handleToggleChange = () => {
     dispatch({
@@ -102,17 +38,14 @@ export const Navbar = ({ setSelectedVideo }) => {
 
   return (
     <Bar className="topnav" id="myTopnav">
-      <Links href="#home" className="active">
-        Inicio
+      <Links onClick={handleClick} to="/">
+        Home
       </Links>
-      <SearchBar setSelectedVideo={setSelectedVideo} />
-      <div style={{ display: 'flex' }}>
-        <div>
-          <Text href="#about">Oscuro</Text>
-        </div>
-        <div
-          style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
-        >
+      {/* <Links href="#" className="active" /> */}
+      <SearchBar />
+      <DivDarkMode>
+        <Text href="#about">Dark mode</Text>
+        <DivSwitch>
           <CheckBoxWrapper>
             <CheckBox
               defaultChecked={darkTheme}
@@ -122,8 +55,18 @@ export const Navbar = ({ setSelectedVideo }) => {
             />
             <CheckBoxLabel htmlFor="checkbox" />
           </CheckBoxWrapper>
-        </div>
-      </div>
+          {isLogged ? (
+            <>
+              <Links onClick={handleLogout} to="/">
+                Logout
+              </Links>
+              <Links to="/favorites">Favorites</Links>
+            </>
+          ) : (
+            <Links to="/auth">Login</Links>
+          )}
+        </DivSwitch>
+      </DivDarkMode>
     </Bar>
   );
 };

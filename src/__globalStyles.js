@@ -24,7 +24,8 @@ body{
     font-weight: 400;
     line-height: 1.6;
     font-size: 1.6rem;
-    color: #333;
+    background-color: ${(props) => props.theme.main.backgroundColor};
+
 
 }
 `;
@@ -52,6 +53,29 @@ export const Container = styled.div`
     max-width: 1800px;
     padding: 0 30px;
   }
+`;
+
+export const Button = styled.button`
+  background-color: gray;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 7px 10px 7px 10px;
+
+  transition: color 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: #eae9e9;
+  }
+
+  /* &:hover {
+    color: darken($color: white, $amount: 15);
+  } */
 `;
 
 export const FullWidthContainer = styled.div`

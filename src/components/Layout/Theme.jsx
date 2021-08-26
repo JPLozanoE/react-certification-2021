@@ -8,7 +8,7 @@ const Theme = ({ children }) => {
   } = useContext(AppContext);
   const theme = {
     main: {
-      ...(darkTheme ? { backgroundColor: '#181818' } : { backgroundColor: '#fffff' }),
+      ...(darkTheme ? { backgroundColor: '#181818' } : { backgroundColor: '#ffffff' }),
     },
     titles: {
       ...(darkTheme ? { color: '#ffffff' } : { color: '#00000' }),
