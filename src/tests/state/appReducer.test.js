@@ -36,7 +36,7 @@ describe('Testing appReducer', () => {
       type: types.toggleTheme,
     };
     const state = appReducer(demoState, action);
-    expect(state.darkTheme).toBe(false);
+    expect(state.isDarkTheme).toBe(false);
   });
 
   test('Recommended Videos', () => {

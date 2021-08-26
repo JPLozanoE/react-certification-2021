@@ -16,7 +16,7 @@ import {
 export const Navbar = () => {
   const {
     state: {
-      darkTheme,
+      isDarkTheme,
       auth: { isLogged },
     },
     dispatch,
@@ -48,7 +48,7 @@ export const Navbar = () => {
         <DivSwitch>
           <CheckBoxWrapper>
             <CheckBox
-              defaultChecked={darkTheme}
+              defaultChecked={isDarkTheme}
               id="checkbox"
               type="checkbox"
               onChange={handleToggleChange}

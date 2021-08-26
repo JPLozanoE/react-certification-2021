@@ -17,7 +17,7 @@ export const appReducer = (state = {}, action) => {
     case types.toggleTheme:
       return {
         ...state,
-        darkTheme: !state.darkTheme,
+        isDarkTheme: !state.isDarkTheme,
       };
 
     case types.setRecommendedVideos:

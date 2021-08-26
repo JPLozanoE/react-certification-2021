@@ -7,7 +7,7 @@ import MainRouter from './routers/MainRouter';
 export const App = () => {
   const init = () => {
     return {
-      darkTheme: true,
+      isDarkTheme: true,
       search: '',
       selectedVideo: null,
       videos: [],

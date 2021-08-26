@@ -4,17 +4,17 @@ import { AppContext } from '../../state/AppContext';
 
 const Theme = ({ children }) => {
   const {
-    state: { darkTheme },
+    state: { isDarkTheme },
   } = useContext(AppContext);
   const theme = {
     main: {
-      ...(darkTheme ? { backgroundColor: '#181818' } : { backgroundColor: '#ffffff' }),
+      ...(isDarkTheme ? { backgroundColor: '#181818' } : { backgroundColor: '#ffffff' }),
     },
     titles: {
-      ...(darkTheme ? { color: '#ffffff' } : { color: '#00000' }),
+      ...(isDarkTheme ? { color: '#ffffff' } : { color: '#00000' }),
     },
     subtitles: {
-      ...(darkTheme ? { color: 'rgb(170,170,170)' } : { color: 'rgb(96,96,96)' }),
+      ...(isDarkTheme ? { color: 'rgb(170,170,170)' } : { color: 'rgb(96,96,96)' }),
     },
   };
 

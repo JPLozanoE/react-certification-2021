@@ -1,5 +1,5 @@
 export const demoState = {
-  darkTheme: true,
+  isDarkTheme: true,
   search: '',
   selectedVideo: null,
   videos: [

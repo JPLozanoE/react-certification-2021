@@ -12,7 +12,7 @@ exports[`Pruebas en <App/> Debe mostrarse correctamente 1`] = `
             "isLogged": true,
             "uid": "LNMUgAl5pXaGAjwXwINnyStBowD2",
           },
-          "darkTheme": true,
+          "isDarkTheme": true,
           "favoriteVideos": Array [],
           "search": "",
           "selectedVideo": null,
