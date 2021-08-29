@@ -39,3 +39,28 @@ describe('SidebarItem', () => {
     expect(ImageElement).toBeInTheDocument();
   });
 });
+
+describe('SidebarItem on favorites screen', () => {
+  let wrapper;
+  beforeEach(() => {
+    const providerValues = {
+      state: { ...demoState },
+      dispatch: jest.fn(),
+    };
+    wrapper = render(
+      <AppContext.Provider value={providerValues}>
+        <Theme>
+          <Router>
+            <SidebarItem video={singleVideo} editFavorites isFavorite />
+          </Router>
+        </Theme>
+      </AppContext.Provider>
+    );
+  });
+
+  test('Should contain a Delete from favorites button', () => {
+    wrapper.debug();
+    const TitleElement = wrapper.getByText('Delete from favorites');
+    expect(TitleElement).toBeInTheDocument();
+  });
+});

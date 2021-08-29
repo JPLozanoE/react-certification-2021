@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites Page Should render properly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-bdnxRM gbwLTQ"
+      >
+        <div
+          class="sc-gtsrHT gBukoy"
+        >
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""
+            class="sc-eCApnc cepYYm"
+            frameborder="0"
+            src="https://www.youtube.com/embed/EqG9gWbwxlw"
+            title="Embedded youtube"
+            width="100%"
+          />
+          <h2
+            class="sc-dlnjwi dzceGW"
+          >
+            State of Emergency As Hurricane Henri Approaches New York
+          </h2>
+          <p
+            class="sc-hKFxyN cvlDaB"
+          >
+            Officials are declaring a state of emergency for New York City and surrounding regions. Residents on Long Island are boarding up and some are rushing to get ...
+          </p>
+        </div>
+        <div
+          class="sc-gtsrHT gBukoy"
+        >
+          <div
+            class="sc-jrsJWt cwylym"
+          >
+            <div
+              class="sc-fujyAs ddSJEO"
+            >
+              <img
+                alt="img"
+                aria-label="State of Emergency As Hurricane Henri Approaches New York"
+                src="https://i.ytimg.com/vi/EqG9gWbwxlw/default.jpg"
+              />
+              <div
+                class="sc-pNWdM kVAvoZ"
+              >
+                State of Emergency As Hurricane Henri Approaches New York
+                <div>
+                  <button
+                    class="sc-gKAaRy kTkCxO"
+                    type="button"
+                  >
+                    Delete from favorites
+                  </button>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div
+              class="sc-fujyAs ddSJEO"
+            >
+              <img
+                alt="img"
+                aria-label="HAPPY HALLOWEEN! MAGICIAN PLUNGES NEEDLE THROUGH ARM!"
+                src="https://i.ytimg.com/vi/8vtTuYav2k0/default.jpg"
+              />
+              <div
+                class="sc-pNWdM kVAvoZ"
+              >
+                HAPPY HALLOWEEN! MAGICIAN PLUNGES NEEDLE THROUGH ARM!
+                <div>
+                  <button
+                    class="sc-gKAaRy kTkCxO"
+                    type="button"
+                  >
+                    Delete from favorites
+                  </button>
+                </div>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bdnxRM gbwLTQ"
+    >
+      <div
+        class="sc-gtsrHT gBukoy"
+      >
+        <iframe
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen=""
+          class="sc-eCApnc cepYYm"
+          frameborder="0"
+          src="https://www.youtube.com/embed/EqG9gWbwxlw"
+          title="Embedded youtube"
+          width="100%"
+        />
+        <h2
+          class="sc-dlnjwi dzceGW"
+        >
+          State of Emergency As Hurricane Henri Approaches New York
+        </h2>
+        <p
+          class="sc-hKFxyN cvlDaB"
+        >
+          Officials are declaring a state of emergency for New York City and surrounding regions. Residents on Long Island are boarding up and some are rushing to get ...
+        </p>
+      </div>
+      <div
+        class="sc-gtsrHT gBukoy"
+      >
+        <div
+          class="sc-jrsJWt cwylym"
+        >
+          <div
+            class="sc-fujyAs ddSJEO"
+          >
+            <img
+              alt="img"
+              aria-label="State of Emergency As Hurricane Henri Approaches New York"
+              src="https://i.ytimg.com/vi/EqG9gWbwxlw/default.jpg"
+            />
+            <div
+              class="sc-pNWdM kVAvoZ"
+            >
+              State of Emergency As Hurricane Henri Approaches New York
+              <div>
+                <button
+                  class="sc-gKAaRy kTkCxO"
+                  type="button"
+                >
+                  Delete from favorites
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="sc-fujyAs ddSJEO"
+          >
+            <img
+              alt="img"
+              aria-label="HAPPY HALLOWEEN! MAGICIAN PLUNGES NEEDLE THROUGH ARM!"
+              src="https://i.ytimg.com/vi/8vtTuYav2k0/default.jpg"
+            />
+            <div
+              class="sc-pNWdM kVAvoZ"
+            >
+              HAPPY HALLOWEEN! MAGICIAN PLUNGES NEEDLE THROUGH ARM!
+              <div>
+                <button
+                  class="sc-gKAaRy kTkCxO"
+                  type="button"
+                >
+                  Delete from favorites
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -7,7 +7,7 @@ import { types } from '../../types/types';
 import { Button } from '../../__globalStyles';
 import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
-export const SidebarItem = ({ video, isFavorite = false, editFavorites = false }) => {
+export const SidebarItem = ({ video, isFavorite, editFavorites }) => {
   const { dispatch } = useContext(AppContext);
   const history = useHistory();
 

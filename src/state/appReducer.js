@@ -55,6 +55,24 @@ export const appReducer = (state = {}, action) => {
         ],
       };
 
+    case types.addCurrentVideo:
+      return {
+        ...state,
+        selectedVideo: {
+          ...state.selectedVideo,
+          isFavorite: true,
+        },
+      };
+
+    case types.deleteCurrentVideo:
+      return {
+        ...state,
+        selectedVideo: {
+          ...state.selectedVideo,
+          isFavorite: false,
+        },
+      };
+
     case types.deleteFavoriteVideo:
       return {
         ...state,

@@ -67,3 +67,27 @@ describe('VideoItem being logged in', () => {
     expect(ChannelTitleElement).toBeInTheDocument();
   });
 });
+
+describe('VideoItem when present on favorite videos screen', () => {
+  let wrapper;
+  beforeEach(() => {
+    const providerValues = {
+      state: { ...demoState, auth: { ...demoState.auth, isLogged: true } },
+      dispatch: jest.fn(),
+    };
+    wrapper = render(
+      <AppContext.Provider value={providerValues}>
+        <Theme>
+          <Router>
+            <VideoItem video={singleVideo} editFavorites isFavorite />
+          </Router>
+        </Theme>
+      </AppContext.Provider>
+    );
+  });
+
+  test('Should contain an "Delete favorites" button ', () => {
+    const ChannelTitleElement = wrapper.getByText('Delete from favorites');
+    expect(ChannelTitleElement).toBeInTheDocument();
+  });
+});

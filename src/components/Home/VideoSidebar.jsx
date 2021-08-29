@@ -6,17 +6,14 @@ export const VideoSidebar = ({ videos, editFavorites }) => {
   return (
     <SidebarLayout>
       {videos.map((video) => {
-        if (video.id.videoId) {
-          return (
-            <SidebarItem
-              key={video.id.videoId}
-              video={video}
-              isFavorite={video?.isFavorite}
-              editFavorites={editFavorites}
-            />
-          );
-        }
-        return false;
+        return (
+          <SidebarItem
+            key={video.id.videoId}
+            video={video}
+            isFavorite={video?.isFavorite}
+            editFavorites={editFavorites}
+          />
+        );
       })}
     </SidebarLayout>
   );
