@@ -7,7 +7,7 @@ import { types } from '../../types/types';
 import { Button } from '../../__globalStyles';
 import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
-export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
+export const SidebarItem = ({ video, isFavorite = false, editFavorites = false }) => {
   const { dispatch } = useContext(AppContext);
   const history = useHistory();
 
@@ -16,7 +16,7 @@ export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
       type: types.setSelectedVideo,
       payload: video,
     });
-    if (edit) {
+    if (editFavorites) {
       history.push(`/video/favorites/${video.id.videoId}`);
     } else {
       history.push(`/video/${video.id.videoId}`);

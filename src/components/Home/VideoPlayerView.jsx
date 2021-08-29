@@ -33,7 +33,10 @@ export const VideoPlayerView = ({ favorites }) => {
         <Description>{description}</Description>
       </ItemPlayerView>
       <ItemPlayerView>
-        <VideoSidebar videos={favorites ? favoriteVideos : videos} edit={false} />
+        <VideoSidebar
+          videos={favorites ? favoriteVideos : videos}
+          editFavorites={false}
+        />
       </ItemPlayerView>
     </VideoContainer>
   );

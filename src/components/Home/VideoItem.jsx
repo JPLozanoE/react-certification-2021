@@ -7,7 +7,7 @@ import { types } from '../../types/types';
 import { VideoContainer, VideoTitle, VideoText } from './styles/VideoItem';
 import { Button } from '../../__globalStyles';
 
-export const VideoItem = ({ video, edit, isFavorite }) => {
+export const VideoItem = ({ video, editFavorites, isFavorite }) => {
   const {
     dispatch,
     state: {
@@ -21,7 +21,7 @@ export const VideoItem = ({ video, edit, isFavorite }) => {
       type: types.setSelectedVideo,
       payload: videoPayload,
     });
-    if (edit) {
+    if (editFavorites) {
       history.push(`/video/favorites/${video.id.videoId}`);
     } else {
       history.push(`/video/${video.id.videoId}`);
@@ -29,7 +29,7 @@ export const VideoItem = ({ video, edit, isFavorite }) => {
   };
 
   const handleAddFavorite = (videoPayload) => {
-    if (edit) {
+    if (editFavorites) {
       dispatch({
         type: types.deleteFavoriteVideo,
         payload: videoPayload.id.videoId,
@@ -65,11 +65,11 @@ export const VideoItem = ({ video, edit, isFavorite }) => {
           </VideoTitle>
           {isLogged && (
             <Button
-              disabled={isFavorite && !edit}
+              disabled={isFavorite && !editFavorites}
               onClick={() => handleAddFavorite(video)}
               type="button"
             >
-              {edit ? 'Delete from favorites' : 'Add to favorites'}
+              {editFavorites ? 'Delete from favorites' : 'Add to favorites'}
             </Button>
           )}
         </div>
