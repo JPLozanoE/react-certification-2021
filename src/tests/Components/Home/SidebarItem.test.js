@@ -18,7 +18,7 @@ describe('SidebarItem', () => {
       <AppContext.Provider value={providerValues}>
         <Theme>
           <Router>
-            <SidebarItem video={singleVideo} edit={false} isFavorite={false} />
+            <SidebarItem video={singleVideo} editFavorites={false} isFavorite={false} />
           </Router>
         </Theme>
       </AppContext.Provider>

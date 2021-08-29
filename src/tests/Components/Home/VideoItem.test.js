@@ -18,7 +18,7 @@ describe('VideoItem not being logged in', () => {
       <AppContext.Provider value={providerValues}>
         <Theme>
           <Router>
-            <VideoItem video={singleVideo} edit={false} isFavorite={false} />
+            <VideoItem video={singleVideo} editFavorites={false} isFavorite={false} />
           </Router>
         </Theme>
       </AppContext.Provider>
@@ -55,7 +55,7 @@ describe('VideoItem being logged in', () => {
       <AppContext.Provider value={providerValues}>
         <Theme>
           <Router>
-            <VideoItem video={singleVideo} edit={false} isFavorite={false} />
+            <VideoItem video={singleVideo} editFavorites={false} isFavorite={false} />
           </Router>
         </Theme>
       </AppContext.Provider>

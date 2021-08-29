@@ -18,7 +18,7 @@ describe('VideoGrid', () => {
     <AppContext.Provider value={providerValues}>
       <Theme>
         <Router>
-          <VideoGrid items={manyVideos} edit={false} />
+          <VideoGrid items={manyVideos} editFavorites={false} />
         </Router>
       </Theme>
     </AppContext.Provider>
