@@ -28,7 +28,7 @@ export const LoginScreen = () => {
       return false;
     }
 
-    if (password.length < 6) {
+    if (password.length < 5) {
       setMsgError('Invalid password');
       return false;
     }
@@ -39,7 +39,6 @@ export const LoginScreen = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    isFormValid();
     if (isFormValid()) {
       firebase
         .auth()
@@ -96,7 +95,6 @@ export const LoginScreen = () => {
           Login
         </Button>
 
-        {/* <hr/> */}
         <SocialNetworksDiv className="auth__social-networks mt-1">
           <p>Login with Social Networks</p>
           <GoogleDiv className="google-btn" onClick={handleGoogleLogin}>

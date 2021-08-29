@@ -8,8 +8,6 @@ import { Button } from '../../__globalStyles';
 import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
 export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
-  console.log('isFavorite', isFavorite);
-  console.log('edit', edit);
   const { dispatch } = useContext(AppContext);
   const history = useHistory();
 
@@ -23,7 +21,6 @@ export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
     } else {
       history.push(`/video/${video.id.videoId}`);
     }
-    // history.push(`/video/${video.id.videoId}`);
   };
 
   const handleAddFavorite = (videoPayload) => {
@@ -51,15 +48,16 @@ export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
   return (
     <>
       <VideoBox>
-        <img onClick={handleClick} src={thumbnails.default.url} alt="Imagen" />
+        <img
+          onClick={handleClick}
+          src={thumbnails.default.url}
+          alt="img"
+          aria-label={video.snippet.title}
+        />
         <DescriptionBox>
           {title}
           <div>
-            <Button
-              // disabled={isFavorite && !edit}
-              onClick={() => handleAddFavorite(video)}
-              type="button"
-            >
+            <Button onClick={() => handleAddFavorite(video)} type="button">
               {isFavorite ? 'Delete from favorites' : 'Add to Favorites'}
             </Button>
           </div>

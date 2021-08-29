@@ -21,6 +21,8 @@ export const App = () => {
   };
   const [state, dispatch] = useReducer(appReducer, {}, init);
 
+  console.log({ state, dispatch });
+
   return (
     <div>
       <AppContext.Provider value={{ state, dispatch }}>

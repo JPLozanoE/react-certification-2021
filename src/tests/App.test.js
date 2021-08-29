@@ -1,22 +1,11 @@
-import { shallow } from 'enzyme';
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import { App } from '../App';
 
-describe('Pruebas en <App/>', () => {
-  test('Renders without crashing', () => {
-    const root = document.createElement('div');
-    ReactDOM.render(
-      // eslint-disable-next-line react/jsx-filename-extension
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>,
-      root
-    );
-  });
-
-  test('Debe mostrarse correctamente', () => {
-    const wrapper = shallow(<App />);
+describe('<App/> Testing', () => {
+  test('should render properly', () => {
+    const wrapper = render(<App />);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -5,9 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AppContext } from '../../../state/AppContext';
 import Theme from '../../../components/Layout/Theme';
 import { demoState, singleVideo } from '../../fixtures/demoState';
-import { VideoItem } from '../../../components/Home/VideoItem';
+import { SidebarItem } from '../../../components/Home/SidebarItem';
 
-describe('VideoItem not being logged in', () => {
+describe('SidebarItem', () => {
   let wrapper;
   beforeEach(() => {
     const providerValues = {
@@ -18,7 +18,7 @@ describe('VideoItem not being logged in', () => {
       <AppContext.Provider value={providerValues}>
         <Theme>
           <Router>
-            <VideoItem video={singleVideo} edit={false} isFavorite={false} />
+            <SidebarItem video={singleVideo} edit={false} isFavorite={false} />
           </Router>
         </Theme>
       </AppContext.Provider>
@@ -27,10 +27,6 @@ describe('VideoItem not being logged in', () => {
 
   test('Should render properly', () => {
     expect(wrapper).toMatchSnapshot();
-  });
-  test('Should contain a channel title', () => {
-    const ChannelTitleElement = wrapper.getByText(singleVideo.snippet.channelTitle);
-    expect(ChannelTitleElement).toBeInTheDocument();
   });
 
   test('Should contain a title', () => {
@@ -41,29 +37,5 @@ describe('VideoItem not being logged in', () => {
   test('Should contain an Image', () => {
     const ImageElement = wrapper.getByRole('img', { name: singleVideo.snippet.title });
     expect(ImageElement).toBeInTheDocument();
-  });
-});
-
-describe('VideoItem being logged in', () => {
-  let wrapper;
-  beforeEach(() => {
-    const providerValues = {
-      state: { ...demoState, auth: { ...demoState.auth, isLogged: true } },
-      dispatch: jest.fn(),
-    };
-    wrapper = render(
-      <AppContext.Provider value={providerValues}>
-        <Theme>
-          <Router>
-            <VideoItem video={singleVideo} edit={false} isFavorite={false} />
-          </Router>
-        </Theme>
-      </AppContext.Provider>
-    );
-  });
-
-  test('Should contain an "Add to favorites" button ', () => {
-    const ChannelTitleElement = wrapper.getByText('Add to favorites');
-    expect(ChannelTitleElement).toBeInTheDocument();
   });
 });
