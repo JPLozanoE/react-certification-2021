@@ -1,0 +1,414 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Router Should render properly when in /auth/register 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <main
+        class="sc-hKFxyN fOcJjF"
+      >
+        <div
+          class="sc-kEqXSa fRhAbd topnav"
+          id="myTopnav"
+        >
+          <a
+            class="sc-iqAclL jRYrJJ"
+            href="/"
+          >
+            Home
+          </a>
+          <div
+            class="sc-fujyAs iyNEPm topnav"
+            id="myTopnav"
+          >
+            <input
+              class="sc-pNWdM cLsCj"
+              placeholder="Enter your search..."
+              value=""
+            />
+            <button
+              class="sc-jrsJWt foBoLi"
+              name="search"
+            >
+              Search
+            </button>
+          </div>
+          <div
+            class="sc-hBMUJo ldJdCL"
+          >
+            <p
+              class="sc-crzoAE kbehzr"
+              href="#about"
+            >
+              Dark mode
+            </p>
+            <div
+              class="sc-fnVZcZ cvvNjz"
+            >
+              <div
+                class="sc-dIsUp bctaC"
+              >
+                <input
+                  checked=""
+                  class="sc-ksluID jYamWL"
+                  id="checkbox"
+                  type="checkbox"
+                />
+                <label
+                  class="sc-bqGGPW jLTksx"
+                  for="checkbox"
+                />
+              </div>
+              <a
+                class="sc-iqAclL jRYrJJ"
+                href="/auth"
+              >
+                Login
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-dlnjwi eueSIH"
+        >
+          <div
+            class="sc-eCApnc coObtW"
+          >
+            <div
+              class="sc-jSFjdj jLPDRD"
+            >
+              <img
+                alt="img"
+                aria-label="Twins vs. Yankees Game Highlights (8/20/21) | MLB Highlights"
+                height="150px"
+                src="https://i.ytimg.com/vi/yFq-c9ZpmRs/hqdefault.jpg"
+                style="object-fit: cover;"
+                width="100%"
+              />
+              <div
+                style="padding: 10px;"
+              >
+                <div>
+                  <h3
+                    class="sc-gKAaRy cAjJAT"
+                  >
+                    Twins vs. Yankees Game Highlights (8/20/21) | MLB Highlights
+                  </h3>
+                </div>
+                <p
+                  class="sc-iCoGMd iGounM"
+                >
+                  MLB
+                </p>
+                <p
+                  class="sc-iCoGMd iGounM"
+                >
+                  Publicado el 
+                  2021-08-21T03:02:50Z
+                </p>
+              </div>
+            </div>
+            <div
+              class="sc-jSFjdj jLPDRD"
+            >
+              <img
+                alt="img"
+                aria-label="State of Emergency As Hurricane Henri Approaches New York"
+                height="150px"
+                src="https://i.ytimg.com/vi/EqG9gWbwxlw/hqdefault.jpg"
+                style="object-fit: cover;"
+                width="100%"
+              />
+              <div
+                style="padding: 10px;"
+              >
+                <div>
+                  <h3
+                    class="sc-gKAaRy cAjJAT"
+                  >
+                    State of Emergency As Hurricane Henri Approaches New York
+                  </h3>
+                </div>
+                <p
+                  class="sc-iCoGMd iGounM"
+                >
+                  NBC News
+                </p>
+                <p
+                  class="sc-iCoGMd iGounM"
+                >
+                  Publicado el 
+                  2021-08-21T23:30:18Z
+                </p>
+              </div>
+            </div>
+            <div
+              class="sc-jSFjdj jLPDRD"
+            >
+              <img
+                alt="img"
+                aria-label="MAGICIAN BRANDS HIS OWN FLESH... WITH A PLAYING CARD!"
+                height="150px"
+                src="https://i.ytimg.com/vi/LqiDJh4zxAc/hqdefault.jpg"
+                style="object-fit: cover;"
+                width="100%"
+              />
+              <div
+                style="padding: 10px;"
+              >
+                <div>
+                  <h3
+                    class="sc-gKAaRy cAjJAT"
+                  >
+                    MAGICIAN BRANDS HIS OWN FLESH... WITH A PLAYING CARD!
+                  </h3>
+                </div>
+                <p
+                  class="sc-iCoGMd iGounM"
+                >
+                  Magic Secrets Revealed
+                </p>
+                <p
+                  class="sc-iCoGMd iGounM"
+                >
+                  Publicado el 
+                  2019-09-05T21:00:03Z
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <main
+      class="sc-hKFxyN fOcJjF"
+    >
+      <div
+        class="sc-kEqXSa fRhAbd topnav"
+        id="myTopnav"
+      >
+        <a
+          class="sc-iqAclL jRYrJJ"
+          href="/"
+        >
+          Home
+        </a>
+        <div
+          class="sc-fujyAs iyNEPm topnav"
+          id="myTopnav"
+        >
+          <input
+            class="sc-pNWdM cLsCj"
+            placeholder="Enter your search..."
+            value=""
+          />
+          <button
+            class="sc-jrsJWt foBoLi"
+            name="search"
+          >
+            Search
+          </button>
+        </div>
+        <div
+          class="sc-hBMUJo ldJdCL"
+        >
+          <p
+            class="sc-crzoAE kbehzr"
+            href="#about"
+          >
+            Dark mode
+          </p>
+          <div
+            class="sc-fnVZcZ cvvNjz"
+          >
+            <div
+              class="sc-dIsUp bctaC"
+            >
+              <input
+                checked=""
+                class="sc-ksluID jYamWL"
+                id="checkbox"
+                type="checkbox"
+              />
+              <label
+                class="sc-bqGGPW jLTksx"
+                for="checkbox"
+              />
+            </div>
+            <a
+              class="sc-iqAclL jRYrJJ"
+              href="/auth"
+            >
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dlnjwi eueSIH"
+      >
+        <div
+          class="sc-eCApnc coObtW"
+        >
+          <div
+            class="sc-jSFjdj jLPDRD"
+          >
+            <img
+              alt="img"
+              aria-label="Twins vs. Yankees Game Highlights (8/20/21) | MLB Highlights"
+              height="150px"
+              src="https://i.ytimg.com/vi/yFq-c9ZpmRs/hqdefault.jpg"
+              style="object-fit: cover;"
+              width="100%"
+            />
+            <div
+              style="padding: 10px;"
+            >
+              <div>
+                <h3
+                  class="sc-gKAaRy cAjJAT"
+                >
+                  Twins vs. Yankees Game Highlights (8/20/21) | MLB Highlights
+                </h3>
+              </div>
+              <p
+                class="sc-iCoGMd iGounM"
+              >
+                MLB
+              </p>
+              <p
+                class="sc-iCoGMd iGounM"
+              >
+                Publicado el 
+                2021-08-21T03:02:50Z
+              </p>
+            </div>
+          </div>
+          <div
+            class="sc-jSFjdj jLPDRD"
+          >
+            <img
+              alt="img"
+              aria-label="State of Emergency As Hurricane Henri Approaches New York"
+              height="150px"
+              src="https://i.ytimg.com/vi/EqG9gWbwxlw/hqdefault.jpg"
+              style="object-fit: cover;"
+              width="100%"
+            />
+            <div
+              style="padding: 10px;"
+            >
+              <div>
+                <h3
+                  class="sc-gKAaRy cAjJAT"
+                >
+                  State of Emergency As Hurricane Henri Approaches New York
+                </h3>
+              </div>
+              <p
+                class="sc-iCoGMd iGounM"
+              >
+                NBC News
+              </p>
+              <p
+                class="sc-iCoGMd iGounM"
+              >
+                Publicado el 
+                2021-08-21T23:30:18Z
+              </p>
+            </div>
+          </div>
+          <div
+            class="sc-jSFjdj jLPDRD"
+          >
+            <img
+              alt="img"
+              aria-label="MAGICIAN BRANDS HIS OWN FLESH... WITH A PLAYING CARD!"
+              height="150px"
+              src="https://i.ytimg.com/vi/LqiDJh4zxAc/hqdefault.jpg"
+              style="object-fit: cover;"
+              width="100%"
+            />
+            <div
+              style="padding: 10px;"
+            >
+              <div>
+                <h3
+                  class="sc-gKAaRy cAjJAT"
+                >
+                  MAGICIAN BRANDS HIS OWN FLESH... WITH A PLAYING CARD!
+                </h3>
+              </div>
+              <p
+                class="sc-iCoGMd iGounM"
+              >
+                Magic Secrets Revealed
+              </p>
+              <p
+                class="sc-iCoGMd iGounM"
+              >
+                Publicado el 
+                2019-09-05T21:00:03Z
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
