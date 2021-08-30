@@ -6,7 +6,7 @@ import { demoState } from '../../fixtures/demoState';
 import { AppContext } from '../../../state/AppContext';
 import { RegisterScreen } from '../../../components/Auth/RegisterScreen';
 
-describe('LoginScreen', () => {
+describe('RegisterScreen', () => {
   let wrapper;
   beforeEach(() => {
     const providerValues = {

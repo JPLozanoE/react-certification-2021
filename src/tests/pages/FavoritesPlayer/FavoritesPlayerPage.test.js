@@ -7,7 +7,7 @@ import Theme from '../../../components/Layout/Theme';
 import { demoState } from '../../fixtures/demoState';
 import { FavoritesPlayerPage } from '../../../pages/FavoritesPlayer/FavoritesPlayer.page';
 
-describe('Favorites Page', () => {
+describe('Favorites Player', () => {
   let wrapper;
 
   test('Should render properly', () => {
