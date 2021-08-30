@@ -17,7 +17,7 @@ export const appReducer = (state = {}, action) => {
     case types.toggleTheme:
       return {
         ...state,
-        darkTheme: !state.darkTheme,
+        isDarkTheme: !state.isDarkTheme,
       };
 
     case types.setRecommendedVideos:
@@ -53,6 +53,24 @@ export const appReducer = (state = {}, action) => {
           ...state.favoriteVideos,
           { ...action.payload, isFavorite: true },
         ],
+      };
+
+    case types.addCurrentVideo:
+      return {
+        ...state,
+        selectedVideo: {
+          ...state.selectedVideo,
+          isFavorite: true,
+        },
+      };
+
+    case types.deleteCurrentVideo:
+      return {
+        ...state,
+        selectedVideo: {
+          ...state.selectedVideo,
+          isFavorite: false,
+        },
       };
 
     case types.deleteFavoriteVideo:

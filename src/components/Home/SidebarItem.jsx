@@ -7,10 +7,13 @@ import { types } from '../../types/types';
 import { Button } from '../../__globalStyles';
 import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
-export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
-  console.log('isFavorite', isFavorite);
-  console.log('edit', edit);
-  const { dispatch } = useContext(AppContext);
+export const SidebarItem = ({ video, isFavorite, editFavorites }) => {
+  const {
+    dispatch,
+    state: {
+      auth: { isLogged },
+    },
+  } = useContext(AppContext);
   const history = useHistory();
 
   const handleClick = () => {
@@ -18,12 +21,11 @@ export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
       type: types.setSelectedVideo,
       payload: video,
     });
-    if (edit) {
+    if (editFavorites) {
       history.push(`/video/favorites/${video.id.videoId}`);
     } else {
       history.push(`/video/${video.id.videoId}`);
     }
-    // history.push(`/video/${video.id.videoId}`);
   };
 
   const handleAddFavorite = (videoPayload) => {
@@ -51,18 +53,21 @@ export const SidebarItem = ({ video, isFavorite = false, edit = false }) => {
   return (
     <>
       <VideoBox>
-        <img onClick={handleClick} src={thumbnails.default.url} alt="Imagen" />
+        <img
+          onClick={handleClick}
+          src={thumbnails.default.url}
+          alt="img"
+          aria-label={video.snippet.title}
+        />
         <DescriptionBox>
           {title}
-          <div>
-            <Button
-              // disabled={isFavorite && !edit}
-              onClick={() => handleAddFavorite(video)}
-              type="button"
-            >
-              {isFavorite ? 'Delete from favorites' : 'Add to Favorites'}
-            </Button>
-          </div>
+          {isLogged && (
+            <div>
+              <Button onClick={() => handleAddFavorite(video)} type="button">
+                {isFavorite ? 'Delete from favorites' : 'Add to Favorites'}
+              </Button>
+            </div>
+          )}
         </DescriptionBox>
       </VideoBox>
       <hr />

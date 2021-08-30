@@ -1,25 +1,29 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { appReducer } from './state/appReducer';
 import { AppContext } from './state/AppContext';
 import Theme from './components/Layout/Theme';
 import MainRouter from './routers/MainRouter';
 
-export const App = () => {
-  const init = () => {
-    return {
-      darkTheme: true,
-      search: '',
-      selectedVideo: null,
-      videos: [],
-      auth: {
-        isLogged: false,
-        displayName: '',
-        uid: null,
-      },
-      favoriteVideos: JSON.parse(localStorage.getItem('favoriteVideos')) || [],
-    };
+const init = () => {
+  return {
+    isDarkTheme: true,
+    search: '',
+    selectedVideo: null,
+    videos: [],
+    auth: JSON.parse(localStorage.getItem('auth')) || {
+      isLogged: false,
+      displayName: '',
+      uid: null,
+    },
+    favoriteVideos: JSON.parse(localStorage.getItem('favoriteVideos')) || [],
   };
+};
+export const App = () => {
   const [state, dispatch] = useReducer(appReducer, {}, init);
+
+  useEffect(() => {
+    localStorage.setItem('auth', JSON.stringify(state.auth));
+  }, [state.auth]);
 
   return (
     <div>

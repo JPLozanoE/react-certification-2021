@@ -15,7 +15,7 @@ export const Favorites = () => {
   return (
     <>
       <Title>Videos favoritos</Title>
-      <VideoGrid edit items={favoriteVideos} />
+      <VideoGrid editFavorites items={favoriteVideos} />
     </>
   );
 };

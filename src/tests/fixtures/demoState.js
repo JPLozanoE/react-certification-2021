@@ -1,5 +1,5 @@
 export const demoState = {
-  darkTheme: true,
+  isDarkTheme: true,
   search: '',
   selectedVideo: null,
   videos: [
@@ -204,3 +204,103 @@ export const singleVideo = {
     publishTime: '2018-02-20T04:15:30Z',
   },
 };
+
+export const manyVideos = [
+  {
+    kind: 'youtube#searchResult',
+    etag: 'hbQP4sTDn1VKn98yyek3Po4MrH4',
+    id: { kind: 'youtube#video', videoId: 'yFq-c9ZpmRs' },
+    snippet: {
+      publishedAt: '2021-08-21T03:02:50Z',
+      channelId: 'UCoLrcjPV5PbUrUyXq5mjc_A',
+      title: 'Twins vs. Yankees Game Highlights (8/20/21) | MLB Highlights',
+      description:
+        "Twins vs. Yankees full game highlights from 8/20/21, presented by @Mattress Firm Don't forget to subscribe! https://www.youtube.com/mlb Follow us elsewhere ...",
+      thumbnails: {
+        default: {
+          url: 'https://i.ytimg.com/vi/yFq-c9ZpmRs/default.jpg',
+          width: 120,
+          height: 90,
+        },
+        medium: {
+          url: 'https://i.ytimg.com/vi/yFq-c9ZpmRs/mqdefault.jpg',
+          width: 320,
+          height: 180,
+        },
+        high: {
+          url: 'https://i.ytimg.com/vi/yFq-c9ZpmRs/hqdefault.jpg',
+          width: 480,
+          height: 360,
+        },
+      },
+      channelTitle: 'MLB',
+      liveBroadcastContent: 'none',
+      publishTime: '2021-08-21T03:02:50Z',
+    },
+  },
+  {
+    kind: 'youtube#searchResult',
+    etag: 'bb_Uq08XydMDGTk3eO6IC3QF0kM',
+    id: { kind: 'youtube#video', videoId: 'EqG9gWbwxlw' },
+    snippet: {
+      publishedAt: '2021-08-21T23:30:18Z',
+      channelId: 'UCeY0bbntWzzVIaj2z3QigXg',
+      title: 'State of Emergency As Hurricane Henri Approaches New York',
+      description:
+        'Officials are declaring a state of emergency for New York City and surrounding regions. Residents on Long Island are boarding up and some are rushing to get ...',
+      thumbnails: {
+        default: {
+          url: 'https://i.ytimg.com/vi/EqG9gWbwxlw/default.jpg',
+          width: 120,
+          height: 90,
+        },
+        medium: {
+          url: 'https://i.ytimg.com/vi/EqG9gWbwxlw/mqdefault.jpg',
+          width: 320,
+          height: 180,
+        },
+        high: {
+          url: 'https://i.ytimg.com/vi/EqG9gWbwxlw/hqdefault.jpg',
+          width: 480,
+          height: 360,
+        },
+      },
+      channelTitle: 'NBC News',
+      liveBroadcastContent: 'none',
+      publishTime: '2021-08-21T23:30:18Z',
+    },
+  },
+
+  {
+    kind: 'youtube#searchResult',
+    etag: '3JzLjJHlwbPO84PnHsVyqkyVl4E',
+    id: { kind: 'youtube#video', videoId: 'LqiDJh4zxAc' },
+    snippet: {
+      publishedAt: '2019-09-05T21:00:03Z',
+      channelId: 'UCkozSCYe1posLlfjUhaJOkw',
+      title: 'MAGICIAN BRANDS HIS OWN FLESH... WITH A PLAYING CARD!',
+      description:
+        "Fire + Playing Cards = One of the freakiest pieces of street magic you'll ever see! Watch as the Masked Magician reveals a randomly selected card by branding it ...",
+      thumbnails: {
+        default: {
+          url: 'https://i.ytimg.com/vi/LqiDJh4zxAc/default.jpg',
+          width: 120,
+          height: 90,
+        },
+        medium: {
+          url: 'https://i.ytimg.com/vi/LqiDJh4zxAc/mqdefault.jpg',
+          width: 320,
+          height: 180,
+        },
+        high: {
+          url: 'https://i.ytimg.com/vi/LqiDJh4zxAc/hqdefault.jpg',
+          width: 480,
+          height: 360,
+        },
+      },
+      channelTitle: 'Magic Secrets Revealed',
+      liveBroadcastContent: 'none',
+      publishTime: '2019-09-05T21:00:03Z',
+    },
+  },
+];

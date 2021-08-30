@@ -36,7 +36,7 @@ describe('Testing appReducer', () => {
       type: types.toggleTheme,
     };
     const state = appReducer(demoState, action);
-    expect(state.darkTheme).toBe(false);
+    expect(state.isDarkTheme).toBe(false);
   });
 
   test('Recommended Videos', () => {
@@ -91,6 +91,36 @@ describe('Testing appReducer', () => {
     ];
     const state = appReducer(demoState, action);
     expect(state.favoriteVideos).toEqual(expectedState);
+  });
+
+  test('Add current video', () => {
+    const action = {
+      type: types.addCurrentVideo,
+      payload: singleVideo.id.videoId,
+    };
+
+    const newDemoState = {
+      ...demoState,
+      selectedVideo: { ...singleVideo },
+    };
+
+    const state = appReducer(newDemoState, action);
+    expect(state.selectedVideo.isFavorite).toBe(true);
+  });
+
+  test('Delete current video', () => {
+    const action = {
+      type: types.deleteCurrentVideo,
+      payload: singleVideo.id.videoId,
+    };
+
+    const newDemoState = {
+      ...demoState,
+      selectedVideo: { ...singleVideo, isFavorite: true },
+    };
+
+    const state = appReducer(newDemoState, action);
+    expect(state.selectedVideo.isFavorite).toBe(false);
   });
 
   test('Delete favorite video', () => {

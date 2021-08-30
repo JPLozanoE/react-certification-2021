@@ -1,29 +1,212 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en <App/> Debe mostrarse correctamente 1`] = `
-<div>
-  <ContextProvider
-    value={
-      Object {
-        "dispatch": [Function],
-        "state": Object {
-          "auth": Object {
-            "displayName": "Pablo Lozano",
-            "isLogged": true,
-            "uid": "LNMUgAl5pXaGAjwXwINnyStBowD2",
-          },
-          "darkTheme": true,
-          "favoriteVideos": Array [],
-          "search": "",
-          "selectedVideo": null,
-          "videos": Array [],
-        },
-      }
-    }
-  >
-    <Theme>
-      <MainRouter />
-    </Theme>
-  </ContextProvider>
-</div>
+exports[`<App/> Testing should render properly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <main
+          class="sc-hKFxyN fOcJjF"
+        >
+          <div
+            class="sc-kEqXSa fRhAbd topnav"
+            id="myTopnav"
+          >
+            <a
+              class="sc-iqAclL jRYrJJ"
+              href="/"
+            >
+              Home
+            </a>
+            <div
+              class="sc-fujyAs iyNEPm topnav"
+              id="myTopnav"
+            >
+              <input
+                class="sc-pNWdM cLsCj"
+                placeholder="Enter your search..."
+                value=""
+              />
+              <button
+                class="sc-jrsJWt foBoLi"
+                name="search"
+              >
+                Search
+              </button>
+            </div>
+            <div
+              class="sc-hBMUJo ldJdCL"
+            >
+              <p
+                class="sc-crzoAE kbehzr"
+                href="#about"
+              >
+                Dark mode
+              </p>
+              <div
+                class="sc-fnVZcZ cvvNjz"
+              >
+                <div
+                  class="sc-dIsUp bctaC"
+                >
+                  <input
+                    checked=""
+                    class="sc-ksluID jYamWL"
+                    id="checkbox"
+                    type="checkbox"
+                  />
+                  <label
+                    class="sc-bqGGPW jLTksx"
+                    for="checkbox"
+                  />
+                </div>
+                <a
+                  class="sc-iqAclL jRYrJJ"
+                  href="/auth"
+                >
+                  Login
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-dlnjwi eueSIH"
+          >
+            <div
+              class="sc-eCApnc coObtW"
+            />
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <main
+        class="sc-hKFxyN fOcJjF"
+      >
+        <div
+          class="sc-kEqXSa fRhAbd topnav"
+          id="myTopnav"
+        >
+          <a
+            class="sc-iqAclL jRYrJJ"
+            href="/"
+          >
+            Home
+          </a>
+          <div
+            class="sc-fujyAs iyNEPm topnav"
+            id="myTopnav"
+          >
+            <input
+              class="sc-pNWdM cLsCj"
+              placeholder="Enter your search..."
+              value=""
+            />
+            <button
+              class="sc-jrsJWt foBoLi"
+              name="search"
+            >
+              Search
+            </button>
+          </div>
+          <div
+            class="sc-hBMUJo ldJdCL"
+          >
+            <p
+              class="sc-crzoAE kbehzr"
+              href="#about"
+            >
+              Dark mode
+            </p>
+            <div
+              class="sc-fnVZcZ cvvNjz"
+            >
+              <div
+                class="sc-dIsUp bctaC"
+              >
+                <input
+                  checked=""
+                  class="sc-ksluID jYamWL"
+                  id="checkbox"
+                  type="checkbox"
+                />
+                <label
+                  class="sc-bqGGPW jLTksx"
+                  for="checkbox"
+                />
+              </div>
+              <a
+                class="sc-iqAclL jRYrJJ"
+                href="/auth"
+              >
+                Login
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-dlnjwi eueSIH"
+        >
+          <div
+            class="sc-eCApnc coObtW"
+          />
+        </div>
+      </main>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
