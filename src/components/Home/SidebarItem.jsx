@@ -8,7 +8,12 @@ import { Button } from '../../__globalStyles';
 import { VideoBox, DescriptionBox } from './styles/SidebarItem';
 
 export const SidebarItem = ({ video, isFavorite, editFavorites }) => {
-  const { dispatch } = useContext(AppContext);
+  const {
+    dispatch,
+    state: {
+      auth: { isLogged },
+    },
+  } = useContext(AppContext);
   const history = useHistory();
 
   const handleClick = () => {
@@ -56,11 +61,13 @@ export const SidebarItem = ({ video, isFavorite, editFavorites }) => {
         />
         <DescriptionBox>
           {title}
-          <div>
-            <Button onClick={() => handleAddFavorite(video)} type="button">
-              {isFavorite ? 'Delete from favorites' : 'Add to Favorites'}
-            </Button>
-          </div>
+          {isLogged && (
+            <div>
+              <Button onClick={() => handleAddFavorite(video)} type="button">
+                {isFavorite ? 'Delete from favorites' : 'Add to Favorites'}
+              </Button>
+            </div>
+          )}
         </DescriptionBox>
       </VideoBox>
       <hr />
