@@ -35,7 +35,6 @@ export const VideoItem = ({ video, editFavorites, isFavorite }) => {
         payload: videoPayload.id.videoId,
       });
     } else {
-      console.log('manda a favoritos');
       dispatch({
         type: types.addFavoriteVideo,
         payload: videoPayload,

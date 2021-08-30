@@ -12,7 +12,6 @@ import { Button } from '../../__globalStyles';
 import { types } from '../../types/types';
 
 export const VideoPlayerView = ({ favorites }) => {
-  // const [addedAsFavorite, setAddedAsFavorite] = useState(false);
   const {
     state: {
       videos,
@@ -24,7 +23,6 @@ export const VideoPlayerView = ({ favorites }) => {
   } = useContext(AppContext);
 
   const handleAddFavorite = (videoPayload) => {
-    // setAddedAsFavorite((prevState) => !prevState);
     if (selectedVideo?.isFavorite) {
       dispatch({
         type: types.deleteFavoriteVideo,

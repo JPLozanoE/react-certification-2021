@@ -67,45 +67,63 @@ export const RegisterScreen = () => {
   return (
     <>
       <Title className="auth__title">Register</Title>
-      <form onSubmit={handleRegister}>
+      <form data-testid="form" aria-label="form" onSubmit={handleRegister}>
         {msgError && <div className="auth__alert-error">{msgError}</div>}
+        <label htmlFor="name">
+          {' '}
+          Name
+          <Input
+            id="name"
+            className="auth__input"
+            type="text"
+            placeholder="Juan Pablo Lozano"
+            name="name"
+            autoComplete="off"
+            value={name}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label htmlFor="email">
+          {' '}
+          Email
+          <Input
+            className="auth__input"
+            type="text"
+            id="email"
+            placeholder="example@example.com"
+            name="email"
+            autoComplete="off"
+            value={email}
+            onChange={handleInputChange}
+          />
+        </label>
 
-        <Input
-          className="auth__input"
-          type="text"
-          placeholder="Name"
-          name="name"
-          autoComplete="off"
-          value={name}
-          onChange={handleInputChange}
-        />
-        <Input
-          className="auth__input"
-          type="text"
-          placeholder="Email"
-          name="email"
-          autoComplete="off"
-          value={email}
-          onChange={handleInputChange}
-        />
-
-        <Input
-          className="auth__input"
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={password}
-          onChange={handleInputChange}
-        />
-
-        <Input
-          className="auth__input"
-          type="password"
-          placeholder="Confirm password"
-          name="password2"
-          value={password2}
-          onChange={handleInputChange}
-        />
+        <label htmlFor="password">
+          {' '}
+          Password
+          <Input
+            className="auth__input"
+            type="password"
+            id="password"
+            placeholder="●●●●●"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label htmlFor="password2">
+          {' '}
+          Confirm password
+          <Input
+            className="auth__input"
+            type="password"
+            placeholder="●●●●●"
+            name="password2"
+            id="password2"
+            value={password2}
+            onChange={handleInputChange}
+          />
+        </label>
 
         <Button className="btn btn-primary btn-block mb-5" type="submit">
           Register

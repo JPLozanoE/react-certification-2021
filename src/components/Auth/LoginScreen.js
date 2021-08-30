@@ -70,26 +70,37 @@ export const LoginScreen = () => {
   return (
     <>
       <Title>Login</Title>
-      <form onSubmit={handleLogin}>
+      <form data-testid="form" onSubmit={handleLogin} aria-label="form">
         {msgError && <div className="auth__alert-error">{msgError}</div>}
-        <Input
-          className="auth__input"
-          type="text"
-          placeholder="Email"
-          name="email"
-          autoComplete="off"
-          value={email}
-          onChange={handleInputChange}
-        />
 
-        <Input
-          className="auth__input"
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={password}
-          onChange={handleInputChange}
-        />
+        <label htmlFor="email">
+          {' '}
+          Email
+          <Input
+            className="auth__input"
+            type="text"
+            placeholder="example@example.com"
+            name="email"
+            id="email"
+            autoComplete="off"
+            value={email}
+            onChange={handleInputChange}
+          />
+        </label>
+
+        <label htmlFor="password">
+          {' '}
+          Password
+          <Input
+            className="auth__input"
+            type="password"
+            placeholder=""
+            name="password"
+            id="password"
+            value={password}
+            onChange={handleInputChange}
+          />
+        </label>
 
         <Button disabled={false} className="btn btn-primary btn-block mb-1" type="submit">
           Login

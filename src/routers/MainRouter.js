@@ -12,11 +12,10 @@ import { VideoPage } from '../pages/Video/Video.page';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { AuthRouter } from './AuthRouter';
-// import { Favorites } from '../components/Favorites/Favorites';
 import { FavoritesPage } from '../pages/Favorites/Favorites.page';
 import { FavoritesPlayerPage } from '../pages/FavoritesPlayer/FavoritesPlayer.page';
 
-const RedirectImprov = () => <Redirect to="/" />;
+export const RedirectImprov = () => <Redirect to="/" />;
 
 function MainRouter() {
   const [error, setError] = useState(false);

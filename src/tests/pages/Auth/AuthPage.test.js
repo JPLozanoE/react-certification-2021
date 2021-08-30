@@ -28,7 +28,6 @@ describe('Auth Page', () => {
       </AppContext.Provider>
     );
     expect(wrapper).toMatchSnapshot();
-    wrapper.debug();
     expect(wrapper.getByRole('heading', { name: 'Login' })).toBeInTheDocument();
   });
 });

@@ -59,7 +59,6 @@ describe('SidebarItem on favorites screen', () => {
   });
 
   test('Should contain a Delete from favorites button', () => {
-    wrapper.debug();
     const TitleElement = wrapper.getByText('Delete from favorites');
     expect(TitleElement).toBeInTheDocument();
   });

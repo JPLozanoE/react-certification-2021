@@ -25,7 +25,6 @@ describe('Favorites Page', () => {
       </AppContext.Provider>
     );
     expect(wrapper).toMatchSnapshot();
-    wrapper.debug();
     expect(
       wrapper.getByText(demoState.favoriteVideos[0].snippet.description)
     ).toBeInTheDocument();

@@ -7,20 +7,6 @@ import { AppContext } from '../../../state/AppContext';
 import { demoState } from '../../fixtures/demoState';
 import { SearchBar } from '../../../components/Home/SearchBar';
 
-// describe('SearchBar', () => {
-//   test('Should render properly', () => {
-//     component = render(<SearchBar />);
-//     expect(component).toMatchSnapshot();
-//   });
-
-//   test('Should contain a search button', () => {
-//     const buttonElement = screen.getByRole('button', { name: 'buscar' });
-//     expect(buttonElement).toBeInTheDocument();
-//   });
-// });
-
-/* eslint-disable react/jsx-filename-extension */
-
 describe('SearchBar', () => {
   const providerValues = {
     state: { ...demoState },

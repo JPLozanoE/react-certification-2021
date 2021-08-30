@@ -16,23 +16,40 @@ Object {
           >
             Login
           </h3>
-          <form>
+          <form
+            aria-label="form"
+            data-testid="form"
+          >
             
-            <input
-              autocomplete="off"
-              class="sc-jSFjdj bBOMsQ auth__input"
-              name="email"
-              placeholder="Email"
-              type="text"
-              value=""
-            />
-            <input
-              class="sc-jSFjdj bBOMsQ auth__input"
-              name="password"
-              placeholder="Password"
-              type="password"
-              value=""
-            />
+            <label
+              for="email"
+            >
+               
+              Email
+              <input
+                autocomplete="off"
+                class="sc-jSFjdj bBOMsQ auth__input"
+                id="email"
+                name="email"
+                placeholder="example@example.com"
+                type="text"
+                value=""
+              />
+            </label>
+            <label
+              for="password"
+            >
+               
+              Password
+              <input
+                class="sc-jSFjdj bBOMsQ auth__input"
+                id="password"
+                name="password"
+                placeholder=""
+                type="password"
+                value=""
+              />
+            </label>
             <button
               class="sc-pNWdM kPTJIB btn btn-primary btn-block mb-1"
               type="submit"
@@ -89,23 +106,40 @@ Object {
         >
           Login
         </h3>
-        <form>
+        <form
+          aria-label="form"
+          data-testid="form"
+        >
           
-          <input
-            autocomplete="off"
-            class="sc-jSFjdj bBOMsQ auth__input"
-            name="email"
-            placeholder="Email"
-            type="text"
-            value=""
-          />
-          <input
-            class="sc-jSFjdj bBOMsQ auth__input"
-            name="password"
-            placeholder="Password"
-            type="password"
-            value=""
-          />
+          <label
+            for="email"
+          >
+             
+            Email
+            <input
+              autocomplete="off"
+              class="sc-jSFjdj bBOMsQ auth__input"
+              id="email"
+              name="email"
+              placeholder="example@example.com"
+              type="text"
+              value=""
+            />
+          </label>
+          <label
+            for="password"
+          >
+             
+            Password
+            <input
+              class="sc-jSFjdj bBOMsQ auth__input"
+              id="password"
+              name="password"
+              placeholder=""
+              type="password"
+              value=""
+            />
+          </label>
           <button
             class="sc-pNWdM kPTJIB btn btn-primary btn-block mb-1"
             type="submit"

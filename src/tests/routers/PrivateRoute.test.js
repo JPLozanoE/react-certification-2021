@@ -5,35 +5,13 @@ import { render } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import Theme from '../../components/Layout/Theme';
-import { demoState, singleVideo } from '../fixtures/demoState';
+import { demoState } from '../fixtures/demoState';
 import { AppContext } from '../../state/AppContext';
-import MainRouter, { RedirectImprov } from '../../routers/MainRouter';
 import { PrivateRoute } from '../../routers/PrivateRoute';
-import { FavoritesPlayerPage } from '../../pages/FavoritesPlayer/FavoritesPlayer.page';
+import { FavoritesPage } from '../../pages/Favorites/Favorites.page';
 
-describe('Main Router', () => {
+describe('PrivateRoute', () => {
   let wrapper;
-
-  test('Should render properly when in /auth/register', () => {
-    const providerValues = {
-      state: { ...demoState, selectedVideo: singleVideo },
-      dispatch: jest.fn(),
-    };
-    const history = createMemoryHistory();
-    wrapper = render(
-      <AppContext.Provider value={providerValues}>
-        <Theme>
-          <Router history={history}>
-            <MainRouter />
-          </Router>
-        </Theme>
-      </AppContext.Provider>
-    );
-    expect(wrapper).toMatchSnapshot();
-    expect(
-      wrapper.getByText(demoState.videos[0].snippet.channelTitle)
-    ).toBeInTheDocument();
-  });
 
   test('Should render properly ', () => {
     const providerValues = {
@@ -41,27 +19,41 @@ describe('Main Router', () => {
       dispatch: jest.fn(),
     };
     const history = createMemoryHistory();
-    history.push('/video/favorites/5');
+    history.push('/favorites');
     wrapper = render(
+      <AppContext.Provider value={providerValues}>
+        <Theme>
+          <Router history={history}>
+            <PrivateRoute exact path="/favorites" component={FavoritesPage} isAuth />
+          </Router>
+        </Theme>
+      </AppContext.Provider>
+    );
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.getByText('Videos favoritos')).toBeInTheDocument();
+  });
+
+  test("Shouldn't render if not logged in ", () => {
+    const providerValues = {
+      state: { ...demoState },
+      dispatch: jest.fn(),
+    };
+    const history = createMemoryHistory();
+    history.push('/favorites');
+    const anotherWrapper = render(
       <AppContext.Provider value={providerValues}>
         <Theme>
           <Router history={history}>
             <PrivateRoute
               exact
-              path="/video/favorites/:videoId"
-              component={
-                providerValues.state.selectedVideo !== null
-                  ? FavoritesPlayerPage
-                  : RedirectImprov
-              }
-              isAuth
+              path="/favorites"
+              component={FavoritesPage}
+              isAuth={false}
             />
           </Router>
         </Theme>
       </AppContext.Provider>
     );
-    expect(
-      wrapper.queryByText(demoState.favoriteVideos[0].snippet.title)
-    ).not.toBeInTheDocument();
+    expect(anotherWrapper.queryByText('Videos favoritos')).not.toBeInTheDocument();
   });
 });

@@ -15,6 +15,14 @@ describe('Testing useForm hook', () => {
     expect(typeof reset).toBe('function');
   });
 
+  test('Should return a default form when given not given values', () => {
+    const { result } = renderHook(() => useForm());
+    const [formValues, handleInputChange, reset] = result.current;
+    expect(formValues).toEqual({});
+    expect(typeof handleInputChange).toBe('function');
+    expect(typeof reset).toBe('function');
+  });
+
   test('Should change form value', () => {
     const { result } = renderHook(() => useForm(initialForm));
     const [, handleInputChange] = result.current;
