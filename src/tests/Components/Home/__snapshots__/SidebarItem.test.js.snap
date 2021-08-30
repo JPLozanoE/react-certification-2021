@@ -17,14 +17,6 @@ Object {
           class="sc-eCApnc GbguX"
         >
           ¿Qué es React JS? Breve explicación animada
-          <div>
-            <button
-              class="sc-gtsrHT iAKtvP"
-              type="button"
-            >
-              Add to Favorites
-            </button>
-          </div>
         </div>
       </div>
       <hr />
@@ -43,14 +35,6 @@ Object {
         class="sc-eCApnc GbguX"
       >
         ¿Qué es React JS? Breve explicación animada
-        <div>
-          <button
-            class="sc-gtsrHT iAKtvP"
-            type="button"
-          >
-            Add to Favorites
-          </button>
-        </div>
       </div>
     </div>
     <hr />

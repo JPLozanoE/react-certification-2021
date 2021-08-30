@@ -49,14 +49,6 @@ Object {
                 class="sc-pNWdM kVAvoZ"
               >
                 State of Emergency As Hurricane Henri Approaches New York
-                <div>
-                  <button
-                    class="sc-gKAaRy kTkCxO"
-                    type="button"
-                  >
-                    Delete from favorites
-                  </button>
-                </div>
               </div>
             </div>
             <hr />
@@ -72,14 +64,6 @@ Object {
                 class="sc-pNWdM kVAvoZ"
               >
                 HAPPY HALLOWEEN! MAGICIAN PLUNGES NEEDLE THROUGH ARM!
-                <div>
-                  <button
-                    class="sc-gKAaRy kTkCxO"
-                    type="button"
-                  >
-                    Delete from favorites
-                  </button>
-                </div>
               </div>
             </div>
             <hr />
@@ -133,14 +117,6 @@ Object {
               class="sc-pNWdM kVAvoZ"
             >
               State of Emergency As Hurricane Henri Approaches New York
-              <div>
-                <button
-                  class="sc-gKAaRy kTkCxO"
-                  type="button"
-                >
-                  Delete from favorites
-                </button>
-              </div>
             </div>
           </div>
           <hr />
@@ -156,14 +132,6 @@ Object {
               class="sc-pNWdM kVAvoZ"
             >
               HAPPY HALLOWEEN! MAGICIAN PLUNGES NEEDLE THROUGH ARM!
-              <div>
-                <button
-                  class="sc-gKAaRy kTkCxO"
-                  type="button"
-                >
-                  Delete from favorites
-                </button>
-              </div>
             </div>
           </div>
           <hr />

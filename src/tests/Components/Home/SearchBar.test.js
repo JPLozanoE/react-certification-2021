@@ -25,7 +25,7 @@ describe('SearchBar', () => {
   });
 
   test('Should contain a search button', () => {
-    const buttonElement = screen.getByText('search');
+    const buttonElement = screen.getByText('Search');
     expect(buttonElement).toBeInTheDocument();
   });
 });

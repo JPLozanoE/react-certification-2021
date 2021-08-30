@@ -44,7 +44,7 @@ describe('SidebarItem on favorites screen', () => {
   let wrapper;
   beforeEach(() => {
     const providerValues = {
-      state: { ...demoState },
+      state: { ...demoState, auth: { isLogged: true } },
       dispatch: jest.fn(),
     };
     wrapper = render(
